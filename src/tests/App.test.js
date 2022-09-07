@@ -4,10 +4,10 @@ import App from "../components/App";
 import forecast from "../data/forecast.json";
 
 describe("App", () => {
-  it("renders correctly", () => {
+  it("correctly renders LocationDetails component", () => {
     const { location } = forecast;
     render(<App location={location} />);
-    const h1Element = screen.getByText(/Manchester, UK/i);
+    const h1Element = screen.getByText(`${location.city}, ${location.country}`);
     expect(h1Element).toBeInTheDocument();
   });
 });
