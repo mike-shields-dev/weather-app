@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function LocationDetails({ location }) {
-  const { city, country } = location;
+export default function LocationDetails({ city, country }) {
   return (
     <header>
       <h1>
@@ -13,8 +12,6 @@ export default function LocationDetails({ location }) {
 }
 
 LocationDetails.propTypes = {
-  location: PropTypes.shape({
-    city: PropTypes.string,
-    country: PropTypes.string,
-  }).isRequired,
+  city: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
 };

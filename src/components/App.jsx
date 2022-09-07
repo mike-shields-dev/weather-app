@@ -7,7 +7,7 @@ function App({ location }) {
   return (
     <div className="App">
       <h1>Weather App</h1>
-      <LocationDetails location={location} />
+      <LocationDetails city={location.city} country={location.country} />
     </div>
   );
 }
