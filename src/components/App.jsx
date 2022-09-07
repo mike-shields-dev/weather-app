@@ -1,12 +1,13 @@
 import "../styles/App.css";
 import React from "react";
 import PropTypes from "prop-types";
+import LocationDetails from "./LocationDetails";
 
 function App({ data }) {
-  console.log({ data });
   return (
     <div className="App">
       <h1>Weather App</h1>
+      <LocationDetails location={data.location} />
     </div>
   );
 }
