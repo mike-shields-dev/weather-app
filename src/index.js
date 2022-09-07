@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/index.css";
-import data from "./data/data.json";
+import forecast from "./data/forecast.json";
 import App from "./components/App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App data={data} />
+    <App location={forecast.location} />
   </React.StrictMode>
 );
