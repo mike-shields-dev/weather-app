@@ -1,7 +1,7 @@
 import "../styles/App.css";
 import React from "react";
 
-function App() {
+function App({ data }) {
   return (
     <div className="App">
       <h1>Weather App</h1>
