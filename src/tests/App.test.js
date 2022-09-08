@@ -3,11 +3,14 @@ import React from "react";
 import App from "../components/App";
 import forecast from "../data/forecast.json";
 
+const { location, forecasts } = forecast;
+
 describe("App", () => {
-  it("correctly renders LocationDetails component", () => {
-    const { location } = forecast;
-    render(<App location={location} />);
-    const h1Element = screen.getByText(`${location.city}, ${location.country}`);
-    expect(h1Element).toBeInTheDocument();
+  it("renders LocationDetails component", () => {
+    render(<App location={location} forecasts={forecasts} />);
+    const LocationDetails = screen.getByTestId("location-details");
+
+    expect(LocationDetails).toBeInTheDocument();
+  });
   });
 });

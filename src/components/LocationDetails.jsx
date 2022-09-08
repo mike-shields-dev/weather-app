@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 export default function LocationDetails({ city, country }) {
   return (
-    <header>
-      <h1>
+    <header className="location-details" data-testid="location-details">
+      <h1 className="location-details__title">
         {city}, {country}
       </h1>
     </header>
