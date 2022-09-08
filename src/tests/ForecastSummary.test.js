@@ -13,7 +13,7 @@ describe("ForecastSummary", () => {
         date={date}
         description={description}
         icon={icon}
-        temperature={temperature.max}
+        temperature={temperature}
       />
     );
 
@@ -23,10 +23,11 @@ describe("ForecastSummary", () => {
   it("renders provided props correctly", () => {
     const { getByText, getByTestId } = render(
       <ForecastSummary
+        data-testid="forecast-summary"
         date={date}
         description={description}
         icon={icon}
-        temperature={temperature.max}
+        temperature={temperature}
       />
     );
 

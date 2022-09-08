@@ -8,13 +8,13 @@ export default function ForecastSummary({
   temperature,
 }) {
   return (
-    <div className="forecast-summary">
+    <div className="forecast-summary" data-testid="forecast-summary">
       <h2 className="forecast-summary__date">{date}</h2>
       <p className="forecast-summary__description">{description}</p>
       <p className="forecast-summary__icon" data-testid="forecast-summary-icon">
         {icon}
       </p>
-      <p className="forecast-summary__temperature">{temperature}</p>
+      <p className="forecast-summary__temperature">{temperature.max}</p>
     </div>
   );
 }
@@ -23,5 +23,8 @@ ForecastSummary.propTypes = {
   date: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
-  temperature: PropTypes.number.isRequired,
+  temperature: PropTypes.shape({
+    max: PropTypes.number,
+    min: PropTypes.number,
+  }).isRequired,
 };
