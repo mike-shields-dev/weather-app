@@ -12,5 +12,12 @@ describe("App", () => {
 
     expect(LocationDetails).toBeInTheDocument();
   });
+
+  it("renders ForecastSummaries component", () => {
+    render(<App location={location} forecasts={forecasts} />);
+    const ForecastSummariesContainerElement =
+      screen.getByTestId("forecast-summaries");
+
+    expect(ForecastSummariesContainerElement).toBeInTheDocument();
   });
 });
