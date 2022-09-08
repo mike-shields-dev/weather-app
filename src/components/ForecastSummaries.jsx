@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "../styles/ForecastSummaries.module.css";
 import ForecastSummary from "./ForecastSummary";
 
 export default function ForecastSummaries({ forecasts }) {
   return (
-    <div className="forecast-summaries" data-testid="forecast-summaries">
+    <div
+      className={styles["forecast-summaries"]}
+      data-testid="forecast-summaries"
+    >
       {forecasts.map((forecast) => {
         const { date, description, icon, temperature } = forecast;
         return (
