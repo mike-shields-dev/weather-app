@@ -11,7 +11,9 @@ export default function ForecastSummary({
     <div className="forecast-summary">
       <h2 className="forecast-summary__date">{date}</h2>
       <p className="forecast-summary__description">{description}</p>
-      <p className="forecast-summary__icon">{icon}</p>
+      <p className="forecast-summary__icon" data-testid="forecast-summary-icon">
+        {icon}
+      </p>
       <p className="forecast-summary__temperature">{temperature}</p>
     </div>
   );

@@ -3,12 +3,12 @@ import { render } from "@testing-library/react";
 import ForecastSummary from "../components/ForecastSummary";
 import forecast from "../data/forecast.json";
 
-describe("ForecastSummary", () => {
-  const dailyForecast = forecast.forecasts[0];
-  const { date, description, icon, temperature } = dailyForecast;
+const dailyForecast = forecast.forecasts[0];
+const { date, description, icon, temperature } = dailyForecast;
 
-  it("correctly renders forecast props", () => {
-    const { getByText } = render(
+describe("ForecastSummary", () => {
+  it("renders correctly", () => {
+    const { asFragment } = render(
       <ForecastSummary
         date={date}
         description={description}
@@ -16,9 +16,35 @@ describe("ForecastSummary", () => {
         temperature={temperature.max}
       />
     );
-    expect(getByText(date)).toBeInstanceOf(HTMLHeadingElement);
-    expect(getByText(description)).toBeInstanceOf(HTMLParagraphElement);
-    expect(getByText(icon)).toBeInstanceOf(HTMLParagraphElement);
-    expect(getByText(temperature.max)).toBeInstanceOf(HTMLParagraphElement);
+
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("renders provided props correctly", () => {
+    const { getByText, getByTestId } = render(
+      <ForecastSummary
+        date={date}
+        description={description}
+        icon={icon}
+        temperature={temperature.max}
+      />
+    );
+
+    const dateEl = getByText(date);
+    const descriptionEl = getByText(description);
+    const iconEl = getByTestId("forecast-summary-icon");
+    const temperatureEl = getByText(temperature.max);
+
+    expect(dateEl).toBeInstanceOf(HTMLHeadingElement);
+    expect(dateEl).toHaveClass("forecast-summary__date");
+
+    expect(descriptionEl).toBeInstanceOf(HTMLParagraphElement);
+    expect(descriptionEl).toHaveClass("forecast-summary__description");
+
+    expect(iconEl).toBeInstanceOf(HTMLParagraphElement);
+    expect(iconEl).toHaveClass("forecast-summary__icon");
+
+    expect(temperatureEl).toBeInstanceOf(HTMLParagraphElement);
+    expect(temperatureEl).toHaveClass("forecast-summary__temperature");
   });
 });
