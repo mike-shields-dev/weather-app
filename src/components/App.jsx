@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import styles from "../styles/App.module.css";
 
@@ -11,6 +11,10 @@ function App({ location, forecasts }) {
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
+
+  const handleForecastSelect = useCallback((date) => {
+    setSelectedDate(date);
+  }, []);
 
   return (
     <div className={styles["weather-app"]}>
