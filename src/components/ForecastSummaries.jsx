@@ -12,6 +12,8 @@ export default function ForecastSummaries({ forecasts, handleForecastSelect }) {
       {forecasts.map((forecast) => {
         return (
           <ForecastSummary
+            key={`forecast-summary-${forecast.date}`}
+            handleForecastSelect={handleForecastSelect}
             {...forecast}
           />
         );
