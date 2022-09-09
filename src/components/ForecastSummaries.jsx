@@ -3,14 +3,13 @@ import PropTypes from "prop-types";
 import styles from "../styles/ForecastSummaries.module.css";
 import ForecastSummary from "./ForecastSummary";
 
-export default function ForecastSummaries({ forecasts }) {
+export default function ForecastSummaries({ forecasts, handleForecastSelect }) {
   return (
     <div
       className={styles["forecast-summaries"]}
       data-testid="forecast-summaries"
     >
       {forecasts.map((forecast) => {
-        const { date, description, icon, temperature } = forecast;
         return (
           <ForecastSummary
             key={`forecast-summary-${date}`}
