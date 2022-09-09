@@ -20,13 +20,11 @@ function App({ location, forecasts }) {
     <div className={styles["weather-app"]}>
       <h1>Weather App</h1>
       <LocationDetails city={location.city} country={location.country} />
-      <ForecastSummaries forecasts={forecasts} />
-      <ForecastDetails
-        date={selectedForecast.date}
-        temperature={selectedForecast.temperature}
-        humidity={selectedForecast.humidity}
-        wind={selectedForecast.wind}
+      <ForecastSummaries
+        forecasts={forecasts}
+        handleForecastSelect={handleForecastSelect}
       />
+      <ForecastDetails {...selectedForecast} />
     </div>
   );
 }
