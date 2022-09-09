@@ -9,7 +9,9 @@ exports[`ForecastDetails matches snapshot 1`] = `
       class="forecast-details__date"
       data-testid="forecast-details-date"
     >
-      Mon 30th Apr
+      <span>
+        Mon 30th Apr
+      </span>
     </h2>
     <p
       class="forecast-details__temperature-max"

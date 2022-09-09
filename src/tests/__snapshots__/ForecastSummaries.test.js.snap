@@ -12,8 +12,11 @@ exports[`ForecastSummaries matches snapshot 1`] = `
     >
       <h2
         class="forecast-summary__date"
+        data-testid="forecast-summary-date"
       >
-        Mon 30th Apr
+        <span>
+          Mon 30th Apr
+        </span>
       </h2>
       <p
         class="forecast-summary__description"
@@ -27,8 +30,12 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       />
       <p
         class="forecast-summary__temperature"
+        data-testid="forecast-summary-temperature"
       >
-        11
+        <span>
+          11
+        </span>
+        °C
       </p>
     </div>
     <div
@@ -37,8 +44,11 @@ exports[`ForecastSummaries matches snapshot 1`] = `
     >
       <h2
         class="forecast-summary__date"
+        data-testid="forecast-summary-date"
       >
-        Tue 1st May
+        <span>
+          Tue 1st May
+        </span>
       </h2>
       <p
         class="forecast-summary__description"
@@ -52,8 +62,12 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       />
       <p
         class="forecast-summary__temperature"
+        data-testid="forecast-summary-temperature"
       >
-        13
+        <span>
+          13
+        </span>
+        °C
       </p>
     </div>
     <div
@@ -62,8 +76,11 @@ exports[`ForecastSummaries matches snapshot 1`] = `
     >
       <h2
         class="forecast-summary__date"
+        data-testid="forecast-summary-date"
       >
-        Wed 2nd May
+        <span>
+          Wed 2nd May
+        </span>
       </h2>
       <p
         class="forecast-summary__description"
@@ -77,8 +94,12 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       />
       <p
         class="forecast-summary__temperature"
+        data-testid="forecast-summary-temperature"
       >
-        1
+        <span>
+          1
+        </span>
+        °C
       </p>
     </div>
     <div
@@ -87,8 +108,11 @@ exports[`ForecastSummaries matches snapshot 1`] = `
     >
       <h2
         class="forecast-summary__date"
+        data-testid="forecast-summary-date"
       >
-        Thu 3rd May
+        <span>
+          Thu 3rd May
+        </span>
       </h2>
       <p
         class="forecast-summary__description"
@@ -102,8 +126,12 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       />
       <p
         class="forecast-summary__temperature"
+        data-testid="forecast-summary-temperature"
       >
-        20
+        <span>
+          20
+        </span>
+        °C
       </p>
     </div>
     <div
@@ -112,8 +140,11 @@ exports[`ForecastSummaries matches snapshot 1`] = `
     >
       <h2
         class="forecast-summary__date"
+        data-testid="forecast-summary-date"
       >
-        Fri 4th May
+        <span>
+          Fri 4th May
+        </span>
       </h2>
       <p
         class="forecast-summary__description"
@@ -127,8 +158,12 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       />
       <p
         class="forecast-summary__temperature"
+        data-testid="forecast-summary-temperature"
       >
-        25
+        <span>
+          25
+        </span>
+        °C
       </p>
     </div>
   </div>

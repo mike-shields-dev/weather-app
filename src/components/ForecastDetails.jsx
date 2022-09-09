@@ -1,19 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ordinalDate from "../helpers/ordinalDate";
+import FormattedDate from "./FormattedDate";
 
 export default function ForecastDetails({ date, temperature, humidity, wind }) {
-  const dateString = new Date(date).toDateString();
-  const [weekday, month, dayOfMonth] = dateString.split(" ");
-  const formattedDate = `${weekday} ${ordinalDate(+dayOfMonth)} ${month}`;
-
   return (
     <div className="forecast-details">
       <h2
         className="forecast-details__date"
         data-testid="forecast-details-date"
       >
-        {formattedDate}
+        <FormattedDate date={date} />
       </h2>
       <p
         className="forecast-details__temperature-max"

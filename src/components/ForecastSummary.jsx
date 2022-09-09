@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import WeatherIcon from "react-icons-weather";
-import ordinalDate from "../helpers/ordinalDate";
+import FormattedDate from "./FormattedDate";
 
 export default function ForecastSummary({
   date,
@@ -9,13 +9,14 @@ export default function ForecastSummary({
   icon,
   temperature,
 }) {
-  const dateString = new Date(date).toDateString();
-  const [weekday, month, dayOfMonth] = dateString.split(" ");
-  const formattedDate = `${weekday} ${ordinalDate(+dayOfMonth)} ${month}`;
-
   return (
     <div className="forecast-summary" data-testid="forecast-summary">
-      <h2 className="forecast-summary__date">{formattedDate}</h2>
+      <h2
+        className="forecast-summary__date"
+        data-testid="forecast-summary-date"
+      >
+        <FormattedDate date={date} />
+      </h2>
       <p className="forecast-summary__description">{description}</p>
       <WeatherIcon
         className="forecast-summary__icon"
@@ -23,7 +24,13 @@ export default function ForecastSummary({
         iconId={icon}
         name="owm"
       />
-      <p className="forecast-summary__temperature">{temperature.max} °C</p>
+      <p
+        className="forecast-summary__temperature"
+        data-testid="forecast-summary-temperature"
+      >
+        <span>{temperature.max}</span>
+        °C
+      </p>
     </div>
   );
 }

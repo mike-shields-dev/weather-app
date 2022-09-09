@@ -2,14 +2,11 @@ import React from "react";
 import { render } from "@testing-library/react";
 import ForecastSummary from "../components/ForecastSummary";
 import forecast from "../data/forecast.json";
-import ordinalDate from "../helpers/ordinalDate";
+import unixTimestampToHumanFormattedDate from "../helpers/unixTimestampToFormattedDate";
 
 const dailyForecast = forecast.forecasts[0];
 const { date, description, icon, temperature } = dailyForecast;
-
-const dateString = new Date(date).toDateString();
-const [weekday, month, dayOfMonth] = dateString.split(" ");
-const formattedDate = `${weekday} ${ordinalDate(Number(dayOfMonth))} ${month}`;
+const formattedDate = unixTimestampToHumanFormattedDate(date);
 
 describe("ForecastSummary", () => {
   it("matches snapshot", () => {
@@ -53,12 +50,14 @@ describe("ForecastSummary", () => {
       />
     );
 
-    expect(getByText(formattedDate)).toHaveClass("forecast-summary__date");
+    expect(getByTestId("forecast-summary-date")).toHaveClass(
+      "forecast-summary__date"
+    );
     expect(getByText(description)).toHaveClass("forecast-summary__description");
     expect(getByTestId("forecast-summary-icon")).toHaveClass(
       "forecast-summary__icon"
     );
-    expect(getByText(temperature.max)).toHaveClass(
+    expect(getByTestId("forecast-summary-temperature")).toHaveClass(
       "forecast-summary__temperature"
     );
   });
