@@ -18,7 +18,10 @@ describe("ForecastSummaries", () => {
 
   it("renders forecasts as ForecastSummary components", () => {
     const { getAllByTestId } = render(
-      <ForecastSummaries forecasts={forecasts} handleForecastSelect={jest.fn()}/>
+      <ForecastSummaries
+        forecasts={forecasts}
+        handleForecastSelect={jest.fn()}
+      />
     );
     expect(getAllByTestId("forecast-summary")).toHaveLength(forecasts.length);
   });
