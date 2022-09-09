@@ -12,11 +12,7 @@ export default function ForecastSummaries({ forecasts, handleForecastSelect }) {
       {forecasts.map((forecast) => {
         return (
           <ForecastSummary
-            key={`forecast-summary-${date}`}
-            date={date}
-            description={description}
-            temperature={temperature}
-            icon={icon}
+            {...forecast}
           />
         );
       })}
