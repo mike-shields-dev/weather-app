@@ -8,6 +8,7 @@ export default function ForecastSummary({
   description,
   icon,
   temperature,
+  handleForecastSelect,
 }) {
   return (
     <div className="forecast-summary" data-testid="forecast-summary">
@@ -31,6 +32,9 @@ export default function ForecastSummary({
         <span>{temperature.max}</span>
         °C
       </p>
+      <button type="button" onClick={() => handleForecastSelect(date)}>
+        More details...
+      </button>
     </div>
   );
 }
@@ -43,4 +47,5 @@ ForecastSummary.propTypes = {
     max: PropTypes.number,
     min: PropTypes.number,
   }).isRequired,
+  handleForecastSelect: PropTypes.func.isRequired,
 };
