@@ -42,7 +42,7 @@ describe("ForecastSummary", () => {
     expect(getByText(temperature.max)).toBeInTheDocument();
   });
 
-  it("rendered elements have correct class names", () => {
+  it("renders elements with correct class names", () => {
     const { getByText, getByTestId } = render(
       <ForecastSummary
         data-testid="forecast-summary"
