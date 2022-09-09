@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormattedDate matches snapshot 1`] = `
+<DocumentFragment>
+  <span>
+    Mon 30th Apr
+  </span>
+</DocumentFragment>
+`;

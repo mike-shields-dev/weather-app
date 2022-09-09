@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForecastSummaries matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="forecast-summaries"
+    data-testid="forecast-summaries"
+  >
+    <div
+      class="forecast-summary"
+      data-testid="forecast-summary"
+    >
+      <h2
+        class="forecast-summary__date"
+        data-testid="forecast-summary-date"
+      >
+        <span>
+          Mon 30th Apr
+        </span>
+      </h2>
+      <p
+        class="forecast-summary__description"
+      >
+        Clear
+      </p>
+      <i
+        class="wi wi-day-sunny forecast-summary__icon"
+        data-testid="forecast-summary-icon"
+        name="owm"
+      />
+      <p
+        class="forecast-summary__temperature"
+        data-testid="forecast-summary-temperature"
+      >
+        <span>
+          11
+        </span>
+        °C
+      </p>
+      <button
+        type="button"
+      >
+        More details...
+      </button>
+    </div>
+    <div
+      class="forecast-summary"
+      data-testid="forecast-summary"
+    >
+      <h2
+        class="forecast-summary__date"
+        data-testid="forecast-summary-date"
+      >
+        <span>
+          Tue 1st May
+        </span>
+      </h2>
+      <p
+        class="forecast-summary__description"
+      >
+        Stormy
+      </p>
+      <i
+        class="wi wi-day-thunderstorm forecast-summary__icon"
+        data-testid="forecast-summary-icon"
+        name="owm"
+      />
+      <p
+        class="forecast-summary__temperature"
+        data-testid="forecast-summary-temperature"
+      >
+        <span>
+          13
+        </span>
+        °C
+      </p>
+      <button
+        type="button"
+      >
+        More details...
+      </button>
+    </div>
+    <div
+      class="forecast-summary"
+      data-testid="forecast-summary"
+    >
+      <h2
+        class="forecast-summary__date"
+        data-testid="forecast-summary-date"
+      >
+        <span>
+          Wed 2nd May
+        </span>
+      </h2>
+      <p
+        class="forecast-summary__description"
+      >
+        Heavy Snow
+      </p>
+      <i
+        class="wi wi-day-snow forecast-summary__icon"
+        data-testid="forecast-summary-icon"
+        name="owm"
+      />
+      <p
+        class="forecast-summary__temperature"
+        data-testid="forecast-summary-temperature"
+      >
+        <span>
+          1
+        </span>
+        °C
+      </p>
+      <button
+        type="button"
+      >
+        More details...
+      </button>
+    </div>
+    <div
+      class="forecast-summary"
+      data-testid="forecast-summary"
+    >
+      <h2
+        class="forecast-summary__date"
+        data-testid="forecast-summary-date"
+      >
+        <span>
+          Thu 3rd May
+        </span>
+      </h2>
+      <p
+        class="forecast-summary__description"
+      >
+        Tornado
+      </p>
+      <i
+        class="wi wi-tornado forecast-summary__icon"
+        data-testid="forecast-summary-icon"
+        name="owm"
+      />
+      <p
+        class="forecast-summary__temperature"
+        data-testid="forecast-summary-temperature"
+      >
+        <span>
+          20
+        </span>
+        °C
+      </p>
+      <button
+        type="button"
+      >
+        More details...
+      </button>
+    </div>
+    <div
+      class="forecast-summary"
+      data-testid="forecast-summary"
+    >
+      <h2
+        class="forecast-summary__date"
+        data-testid="forecast-summary-date"
+      >
+        <span>
+          Fri 4th May
+        </span>
+      </h2>
+      <p
+        class="forecast-summary__description"
+      >
+        Hazy
+      </p>
+      <i
+        class="wi wi-day-haze forecast-summary__icon"
+        data-testid="forecast-summary-icon"
+        name="owm"
+      />
+      <p
+        class="forecast-summary__temperature"
+        data-testid="forecast-summary-temperature"
+      >
+        <span>
+          25
+        </span>
+        °C
+      </p>
+      <button
+        type="button"
+      >
+        More details...
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
