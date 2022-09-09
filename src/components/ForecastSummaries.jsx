@@ -34,4 +34,5 @@ ForecastSummaries.propTypes = {
       }),
     })
   ).isRequired,
+  handleForecastSelect: PropTypes.func.isRequired,
 };
