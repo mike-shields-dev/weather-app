@@ -13,19 +13,18 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       <h2
         class="forecast-summary__date"
       >
-        1525046400000
+        Mon 30th Apr
       </h2>
       <p
         class="forecast-summary__description"
       >
         Clear
       </p>
-      <p
-        class="forecast-summary__icon"
+      <i
+        class="wi wi-day-sunny forecast-summary__icon"
         data-testid="forecast-summary-icon"
-      >
-        800
-      </p>
+        name="owm"
+      />
       <p
         class="forecast-summary__temperature"
       >
@@ -39,19 +38,18 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       <h2
         class="forecast-summary__date"
       >
-        1525132800000
+        Tue 1st May
       </h2>
       <p
         class="forecast-summary__description"
       >
         Stormy
       </p>
-      <p
-        class="forecast-summary__icon"
+      <i
+        class="wi wi-day-thunderstorm forecast-summary__icon"
         data-testid="forecast-summary-icon"
-      >
-        211
-      </p>
+        name="owm"
+      />
       <p
         class="forecast-summary__temperature"
       >
@@ -65,19 +63,18 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       <h2
         class="forecast-summary__date"
       >
-        1525219200000
+        Wed 2nd May
       </h2>
       <p
         class="forecast-summary__description"
       >
         Heavy Snow
       </p>
-      <p
-        class="forecast-summary__icon"
+      <i
+        class="wi wi-day-snow forecast-summary__icon"
         data-testid="forecast-summary-icon"
-      >
-        602
-      </p>
+        name="owm"
+      />
       <p
         class="forecast-summary__temperature"
       >
@@ -91,19 +88,18 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       <h2
         class="forecast-summary__date"
       >
-        1525305600000
+        Thu 3rd May
       </h2>
       <p
         class="forecast-summary__description"
       >
         Tornado
       </p>
-      <p
-        class="forecast-summary__icon"
+      <i
+        class="wi wi-tornado forecast-summary__icon"
         data-testid="forecast-summary-icon"
-      >
-        781
-      </p>
+        name="owm"
+      />
       <p
         class="forecast-summary__temperature"
       >
@@ -117,19 +113,18 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       <h2
         class="forecast-summary__date"
       >
-        1525392000000
+        Fri 4th May
       </h2>
       <p
         class="forecast-summary__description"
       >
         Hazy
       </p>
-      <p
-        class="forecast-summary__icon"
+      <i
+        class="wi wi-day-haze forecast-summary__icon"
         data-testid="forecast-summary-icon"
-      >
-        721
-      </p>
+        name="owm"
+      />
       <p
         class="forecast-summary__temperature"
       >

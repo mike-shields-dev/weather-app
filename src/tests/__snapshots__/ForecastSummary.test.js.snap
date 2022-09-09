@@ -9,19 +9,18 @@ exports[`ForecastSummary matches snapshot 1`] = `
     <h2
       class="forecast-summary__date"
     >
-      1525046400000
+      Mon 30th Apr
     </h2>
     <p
       class="forecast-summary__description"
     >
       Clear
     </p>
-    <p
-      class="forecast-summary__icon"
+    <i
+      class="wi wi-day-sunny forecast-summary__icon"
       data-testid="forecast-summary-icon"
-    >
-      800
-    </p>
+      name="owm"
+    />
     <p
       class="forecast-summary__temperature"
     >
