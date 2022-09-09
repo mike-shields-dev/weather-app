@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import ForecastSummary from "../../components/ForecastSummary";
 import forecast from "../../data/forecast.json";
 import unixTimestampToHumanFormattedDate from "../../helpers/unixTimestampToFormattedDate";
@@ -63,5 +63,26 @@ describe("ForecastSummary", () => {
     expect(getByTestId("forecast-summary-temperature")).toHaveClass(
       "forecast-summary__temperature"
     );
+  });
+
+  it("More details... button should call handleForecastSelect callback", () => {
+    const handleForecastSelect = jest.fn();
+
+    const { getByText } = render(
+      <ForecastSummary
+        data-testid="forecast-summary"
+        date={date}
+        description={description}
+        icon={icon}
+        temperature={temperature}
+        handleForecastSelect={handleForecastSelect}
+      />
+    );
+
+    const detailsButton = getByText("More details...");
+
+    fireEvent.click(detailsButton);
+
+    expect(handleForecastSelect).toHaveBeenCalled();
   });
 });
