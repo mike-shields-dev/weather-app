@@ -4,7 +4,7 @@ import FormattedDate from "./FormattedDate";
 
 export default function ForecastDetails({ date, temperature, humidity, wind }) {
   return (
-    <div className="forecast-details">
+    <div className="forecast-details" data-testid="forecast-details">
       <h2
         className="forecast-details__date"
         data-testid="forecast-details-date"
