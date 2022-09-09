@@ -23,7 +23,7 @@ export default function ForecastSummary({
         iconId={icon}
         name="owm"
       />
-      <p className="forecast-summary__temperature">{temperature.max}</p>
+      <p className="forecast-summary__temperature">{temperature.max} °C</p>
     </div>
   );
 }
