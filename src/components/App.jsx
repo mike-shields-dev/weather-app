@@ -4,6 +4,7 @@ import styles from "../styles/App.module.css";
 
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
+import ForecastDetails from "./ForecastDetails";
 
 function App({ location, forecasts }) {
   return (
@@ -11,6 +12,12 @@ function App({ location, forecasts }) {
       <h1>Weather App</h1>
       <LocationDetails city={location.city} country={location.country} />
       <ForecastSummaries forecasts={forecasts} />
+      <ForecastDetails
+        date={forecasts[0].date}
+        temperature={forecasts[0].temperature}
+        humidity={forecasts[0].humidity}
+        wind={forecasts[0].wind}
+      />
     </div>
   );
 }
@@ -28,6 +35,11 @@ App.propTypes = {
       temperature: PropTypes.shape({
         min: PropTypes.number,
         max: PropTypes.number,
+      }),
+      humidity: PropTypes.number,
+      wind: PropTypes.shape({
+        speed: PropTypes.number,
+        direction: PropTypes.string,
       }),
     })
   ).isRequired,
