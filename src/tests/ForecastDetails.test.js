@@ -2,13 +2,11 @@ import React from "react";
 import { render } from "@testing-library/react";
 import ForecastDetails from "../components/ForecastDetails";
 import { forecasts } from "../data/forecast.json";
-import ordinalDate from "../helpers/ordinalDate";
+import unixTimestampToFormattedDate from "../helpers/unixTimestampToFormattedDate";
 
 const [forecast] = forecasts;
 const { date, temperature, humidity, wind } = forecast;
-const dateString = new Date(date).toDateString();
-const [weekday, month, dayOfMonth] = dateString.split(" ");
-const formattedDate = `${weekday} ${ordinalDate(+dayOfMonth)} ${month}`;
+const formattedDate = unixTimestampToFormattedDate(date);
 
 describe("ForecastDetails", () => {
   it("matches snapshot", () => {
