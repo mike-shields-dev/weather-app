@@ -1,29 +1,30 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
 import WeatherApp from "../../components/WeatherApp";
-import forecast from "../../data/forecast.json";
-
-const { location, forecasts } = forecast;
 
 describe("WeatherApp", () => {
-  it("renders LocationDetails component", () => {
-    render(<WeatherApp location={location} forecasts={forecasts} />);
-    const LocationDetails = screen.getByTestId("location-details");
+  it("renders LocationDetails component", async () => {
+    render(<WeatherApp />);
+
+    const LocationDetails = await screen.findByTestId("location-details");
 
     expect(LocationDetails).toBeInTheDocument();
   });
 
-  it("renders ForecastSummaries component", () => {
-    render(<WeatherApp location={location} forecasts={forecasts} />);
-    const ForecastSummariesContainerElement =
-      screen.getByTestId("forecast-summaries");
+  it("renders ForecastSummaries component", async () => {
+    render(<WeatherApp />);
+
+    const ForecastSummariesContainerElement = await screen.findByTestId(
+      "forecast-summaries"
+    );
 
     expect(ForecastSummariesContainerElement).toBeInTheDocument();
   });
 
-  it("renders ForecastDetails component", () => {
-    render(<WeatherApp location={location} forecasts={forecasts} />);
-    const ForecastDetails = screen.getByTestId("forecast-details");
+  it("renders ForecastDetails component", async () => {
+    render(<WeatherApp />);
+
+    const ForecastDetails = await screen.findByTestId("forecast-details");
 
     expect(ForecastDetails).toBeInTheDocument();
   });
