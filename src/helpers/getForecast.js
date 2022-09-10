@@ -1,13 +1,12 @@
 import axios from "axios";
 
-const endPoint =
-  "https://mcr-codes-weather.herokuapp.com/forecast?city=Manchester";
-
 export default async function getForecast({
   setLocation,
   setForecasts,
   setSelectedDate,
+  city,
 }) {
+  const endPoint = `https://mcr-codes-weather.herokuapp.com/forecast?city=${city}`;
   const forecast = await axios.get(endPoint);
   const { location, forecasts } = forecast.data;
 
