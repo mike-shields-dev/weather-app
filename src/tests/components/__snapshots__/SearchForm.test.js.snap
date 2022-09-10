@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="search-form"
+    data-testid="search-form"
+  >
+    <input
+      class="search-form__input"
+      data-testid="search-form-input"
+      placeholder="Enter your search"
+      type="text"
+      value=""
+    />
+    <button
+      class="search-form__button"
+      data-testid="search-form-button"
+      type="submit"
+    >
+      search
+    </button>
+  </div>
+</DocumentFragment>
+`;
