@@ -18,11 +18,7 @@ export default function WeatherApp() {
   }, []);
 
   useEffect(() => {
-    getForecast().then(({ location: _location, forecasts: _forecasts }) => {
-      setLocation(_location);
-      setForecasts(_forecasts);
-      setSelectedDate(_forecasts[0].date);
-    });
+    getForecast({ setLocation, setForecasts, setSelectedDate });
   }, []);
 
   return (
