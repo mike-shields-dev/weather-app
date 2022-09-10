@@ -28,4 +28,12 @@ describe("WeatherApp", () => {
 
     expect(ForecastDetails).toBeInTheDocument();
   });
+
+  it("renders SearchForm component", async () => {
+    render(<WeatherApp />);
+
+    const SearchForm = await screen.findByTestId("search-form");
+
+    expect(SearchForm).toBeInTheDocument();
+  });
 });
