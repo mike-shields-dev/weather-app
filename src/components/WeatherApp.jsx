@@ -1,13 +1,15 @@
-import React, { useState, useCallback } from "react";
-import PropTypes from "prop-types";
+import React, { useState, useCallback, useEffect } from "react";
+import axios from "axios";
 import styles from "../styles/WeatherApp.module.css";
 
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
 
-export default function WeatherApp({ location, forecasts }) {
-  const [selectedDate, setSelectedDate] = useState(forecasts[0].date);
+export default function WeatherApp() {
+  const [location, setLocation] = useState({});
+  const [forecasts, setForecasts] = useState([]);
+  const [selectedDate, setSelectedDate] = useState(0);
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
@@ -16,37 +18,34 @@ export default function WeatherApp({ location, forecasts }) {
     setSelectedDate(date);
   }, []);
 
+  function getForecast() {
+    axios
+      .get("https://mcr-codes-weather.herokuapp.com/forecast?city=Manchester")
+      .then((res) => {
+        const { location: l, forecasts: f } = res.data;
+        setLocation(l);
+        setForecasts(f);
+        setSelectedDate(f[0].date);
+      });
+  }
+
+  useEffect(() => {
+    getForecast();
+  }, []);
+
   return (
     <div className={styles["weather-app"]}>
-      <LocationDetails city={location.city} country={location.country} />
-      <ForecastSummaries
-        forecasts={forecasts}
-        handleForecastSelect={handleForecastSelect}
-      />
-      <ForecastDetails {...selectedForecast} />
+      {Object.keys(location).length && (
+        <LocationDetails city={location.city} country={location.country} />
+      )}
+
+      {forecasts.length && (
+        <ForecastSummaries
+          forecasts={forecasts}
+          handleForecastSelect={handleForecastSelect}
+        />
+      )}
+      {selectedForecast && <ForecastDetails {...selectedForecast} />}
     </div>
   );
 }
-
-WeatherApp.propTypes = {
-  location: PropTypes.shape({
-    city: PropTypes.string,
-    country: PropTypes.string,
-  }).isRequired,
-  forecasts: PropTypes.arrayOf(
-    PropTypes.shape({
-      date: PropTypes.number,
-      description: PropTypes.string,
-      icon: PropTypes.string,
-      temperature: PropTypes.shape({
-        min: PropTypes.number,
-        max: PropTypes.number,
-      }),
-      humidity: PropTypes.number,
-      wind: PropTypes.shape({
-        speed: PropTypes.number,
-        direction: PropTypes.string,
-      }),
-    })
-  ).isRequired,
-};
