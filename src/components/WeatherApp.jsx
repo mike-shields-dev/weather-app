@@ -1,12 +1,12 @@
 import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
-import styles from "../styles/App.module.css";
+import styles from "../styles/WeatherApp.module.css";
 
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
 
-function App({ location, forecasts }) {
+export default function WeatherApp({ location, forecasts }) {
   const [selectedDate, setSelectedDate] = useState(forecasts[0].date);
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
@@ -28,7 +28,7 @@ function App({ location, forecasts }) {
   );
 }
 
-App.propTypes = {
+WeatherApp.propTypes = {
   location: PropTypes.shape({
     city: PropTypes.string,
     country: PropTypes.string,
@@ -50,5 +50,3 @@ App.propTypes = {
     })
   ).isRequired,
 };
-
-export default App;

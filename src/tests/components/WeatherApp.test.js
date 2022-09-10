@@ -1,20 +1,20 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
-import App from "../../components/App";
+import WeatherApp from "../../components/WeatherApp";
 import forecast from "../../data/forecast.json";
 
 const { location, forecasts } = forecast;
 
-describe("App", () => {
+describe("WeatherApp", () => {
   it("renders LocationDetails component", () => {
-    render(<App location={location} forecasts={forecasts} />);
+    render(<WeatherApp location={location} forecasts={forecasts} />);
     const LocationDetails = screen.getByTestId("location-details");
 
     expect(LocationDetails).toBeInTheDocument();
   });
 
   it("renders ForecastSummaries component", () => {
-    render(<App location={location} forecasts={forecasts} />);
+    render(<WeatherApp location={location} forecasts={forecasts} />);
     const ForecastSummariesContainerElement =
       screen.getByTestId("forecast-summaries");
 
@@ -22,7 +22,7 @@ describe("App", () => {
   });
 
   it("renders ForecastDetails component", () => {
-    render(<App location={location} forecasts={forecasts} />);
+    render(<WeatherApp location={location} forecasts={forecasts} />);
     const ForecastDetails = screen.getByTestId("forecast-details");
 
     expect(ForecastDetails).toBeInTheDocument();
