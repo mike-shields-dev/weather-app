@@ -21,7 +21,7 @@ describe("LocationDetails", () => {
     expect(getByText(`${city}, ${country}`)).toBeInTheDocument();
   });
 
-  it("has has correct css class name", () => {
+  it("has correct css class name", () => {
     const { getByText } = render(
       <LocationDetails city={city} country={country} />
     );
