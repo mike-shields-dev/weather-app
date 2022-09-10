@@ -4,8 +4,10 @@ import getForecast from "../helpers/getForecast";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
+import SearchForm from "./SearchForm";
 
 export default function WeatherApp() {
+  const [city, setCity] = useState("");
   const [location, setLocation] = useState({});
   const [forecasts, setForecasts] = useState([]);
   const [selectedDate, setSelectedDate] = useState(0);
@@ -17,15 +19,36 @@ export default function WeatherApp() {
     setSelectedDate(date);
   }, []);
 
-  useEffect(() => {
-    getForecast({ setLocation, setForecasts, setSelectedDate });
+  const updateCity = useCallback((event) => {
+    setCity(event.target.value);
   }, []);
+
+  const submitCitySearch = useCallback(() => {
+    getForecast({
+      setLocation,
+      setForecasts,
+      setSelectedDate,
+      city,
+    });
+  }, [city]);
+
+  useEffect(() => {
+    getForecast({
+      setLocation,
+      setForecasts,
+      setSelectedDate,
+      city: "Manchester",
+    });
+  }, [city]);
 
   return (
     <div className={styles["weather-app"]}>
-      {Object.keys(location).length ? (
-        <LocationDetails city={location.city} country={location.country} />
-      ) : null}
+      <SearchForm
+        handleChange={updateCity}
+        handleSubmit={submitCitySearch}
+        searchText={city}
+      />
+      {Object.keys(location).length ? <LocationDetails {...location} /> : null}
 
       {forecasts.length && selectedForecast ? (
         <>
