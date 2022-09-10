@@ -10,27 +10,13 @@ const formattedDate = unixTimestampToFormattedDate(date);
 
 describe("ForecastDetails", () => {
   it("matches snapshot", () => {
-    const { asFragment } = render(
-      <ForecastDetails
-        date={date}
-        temperature={temperature}
-        humidity={humidity}
-        wind={wind}
-      />
-    );
+    const { asFragment } = render(<ForecastDetails {...forecast} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders formatted date, min and max temperature, humidity and wind speed and direction", () => {
-    const { getByText } = render(
-      <ForecastDetails
-        date={date}
-        temperature={temperature}
-        humidity={humidity}
-        wind={wind}
-      />
-    );
+    const { getByText } = render(<ForecastDetails {...forecast} />);
 
     expect(getByText(formattedDate)).toBeInTheDocument();
     expect(getByText(humidity)).toBeInTheDocument();
@@ -41,14 +27,7 @@ describe("ForecastDetails", () => {
   });
 
   it("renders elements with correct class names", () => {
-    const { getByTestId } = render(
-      <ForecastDetails
-        date={date}
-        temperature={temperature}
-        humidity={humidity}
-        wind={wind}
-      />
-    );
+    const { getByTestId } = render(<ForecastDetails {...forecast} />);
 
     expect(getByTestId("forecast-details-date")).toHaveClass(
       "forecast-details__date"
