@@ -1,0 +1,4 @@
+.forecast-details {
+    display: grid;
+    place-items: center;
+}

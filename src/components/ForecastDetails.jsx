@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "../styles/ForecastDetails.module.css";
 import FormattedDate from "./FormattedDate";
 
 export default function ForecastDetails({ date, temperature, humidity, wind }) {
   return (
-    <div className="forecast-details" data-testid="forecast-details">
+    <div className={styles["forecast-details"]} data-testid="forecast-details">
       <h2
         className="forecast-details__date"
         data-testid="forecast-details-date"
