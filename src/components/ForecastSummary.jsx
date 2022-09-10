@@ -18,7 +18,12 @@ export default function ForecastSummary({
       >
         <FormattedDate date={date} />
       </h2>
-      <p className="forecast-summary__description">{description}</p>
+      <p
+        className="forecast-summary__description"
+        data-testid="forecast-summary-description"
+      >
+        {description}
+      </p>
       <WeatherIcon
         className="forecast-summary__icon"
         data-testid="forecast-summary-icon"

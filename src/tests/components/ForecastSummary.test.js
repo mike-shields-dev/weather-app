@@ -11,13 +11,7 @@ const formattedDate = unixTimestampToHumanFormattedDate(date);
 describe("ForecastSummary", () => {
   it("matches snapshot", () => {
     const { asFragment } = render(
-      <ForecastSummary
-        date={date}
-        description={description}
-        icon={icon}
-        temperature={temperature}
-        handleForecastSelect={jest.fn()}
-      />
+      <ForecastSummary handleForecastSelect={jest.fn()} {...dailyForecast} />
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -27,11 +21,8 @@ describe("ForecastSummary", () => {
     const { getByText, getByTestId } = render(
       <ForecastSummary
         data-testid="forecast-summary"
-        date={date}
-        description={description}
-        icon={icon}
-        temperature={temperature}
         handleForecastSelect={jest.fn()}
+        {...dailyForecast}
       />
     );
 
@@ -45,18 +36,15 @@ describe("ForecastSummary", () => {
     const { getByText, getByTestId } = render(
       <ForecastSummary
         data-testid="forecast-summary"
-        date={date}
-        description={description}
-        icon={icon}
-        temperature={temperature}
         handleForecastSelect={jest.fn()}
+        {...dailyForecast}
       />
     );
 
     expect(getByTestId("forecast-summary-date")).toHaveClass(
       "forecast-summary__date"
     );
-    expect(getByText(description)).toHaveClass("forecast-summary__description");
+    expect(getByTestId("forecast-summary-description")).toHaveClass("forecast-summary__description");
     expect(getByTestId("forecast-summary-icon")).toHaveClass(
       "forecast-summary__icon"
     );
@@ -71,11 +59,8 @@ describe("ForecastSummary", () => {
     const { getByText } = render(
       <ForecastSummary
         data-testid="forecast-summary"
-        date={date}
-        description={description}
-        icon={icon}
-        temperature={temperature}
         handleForecastSelect={handleForecastSelect}
+        {...dailyForecast}
       />
     );
 
