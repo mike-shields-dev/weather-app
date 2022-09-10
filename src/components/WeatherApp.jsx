@@ -5,15 +5,22 @@ import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
 import SearchForm from "./SearchForm";
+import ErrorMessage from "./ErrorMessage";
 
 export default function WeatherApp() {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Manchester");
   const [location, setLocation] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
   const [forecasts, setForecasts] = useState([]);
   const [selectedDate, setSelectedDate] = useState(0);
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
+
+  const acknowledgeError = useCallback(() => {
+    setErrorMessage("");
+    setCity("");
+  }, []);
 
   const handleForecastSelect = useCallback((date) => {
     setSelectedDate(date);
@@ -28,6 +35,7 @@ export default function WeatherApp() {
       setLocation,
       setForecasts,
       setSelectedDate,
+      setErrorMessage,
       city,
     });
   }, [city]);
@@ -47,7 +55,14 @@ export default function WeatherApp() {
         handleChange={updateCity}
         handleSubmit={submitCitySearch}
         searchText={city}
+        placeholder="Enter city name"
       />
+      {errorMessage ? (
+        <ErrorMessage
+          errorMessage={errorMessage}
+          handleClick={acknowledgeError}
+        />
+      ) : null}
       {Object.keys(location).length ? <LocationDetails {...location} /> : null}
 
       {forecasts.length && selectedForecast ? (
