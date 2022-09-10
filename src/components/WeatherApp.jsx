@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
-import axios from "axios";
 import styles from "../styles/WeatherApp.module.css";
-
+import getForecast from "../helpers/getForecast";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
@@ -18,34 +17,29 @@ export default function WeatherApp() {
     setSelectedDate(date);
   }, []);
 
-  function getForecast() {
-    axios
-      .get("https://mcr-codes-weather.herokuapp.com/forecast?city=Manchester")
-      .then((res) => {
-        const { location: l, forecasts: f } = res.data;
-        setLocation(l);
-        setForecasts(f);
-        setSelectedDate(f[0].date);
-      });
-  }
-
   useEffect(() => {
-    getForecast();
+    getForecast().then(({ location: _location, forecasts: _forecasts }) => {
+      setLocation(_location);
+      setForecasts(_forecasts);
+      setSelectedDate(_forecasts[0].date);
+    });
   }, []);
 
   return (
     <div className={styles["weather-app"]}>
-      {Object.keys(location).length && (
+      {Object.keys(location).length ? (
         <LocationDetails city={location.city} country={location.country} />
-      )}
+      ) : null}
 
-      {forecasts.length && (
-        <ForecastSummaries
-          forecasts={forecasts}
-          handleForecastSelect={handleForecastSelect}
-        />
-      )}
-      {selectedForecast && <ForecastDetails {...selectedForecast} />}
+      {forecasts.length && selectedForecast ? (
+        <>
+          <ForecastSummaries
+            forecasts={forecasts}
+            handleForecastSelect={handleForecastSelect}
+          />
+          <ForecastDetails {...selectedForecast} />
+        </>
+      ) : null}
     </div>
   );
 }
