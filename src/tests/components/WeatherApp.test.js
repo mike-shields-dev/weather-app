@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import WeatherApp from "../../components/WeatherApp";
 
@@ -35,5 +35,17 @@ describe("WeatherApp", () => {
     const SearchForm = await screen.findByTestId("search-form");
 
     expect(SearchForm).toBeInTheDocument();
+  });
+
+  it("renders ErrorMessage if API call responds with an error", async () => {
+    render(<WeatherApp />);
+
+    const searchFormTextInput = await screen.findByTestId("search-form-input");
+    const searchFormSubmitButton = await screen.findByText("search");
+
+    fireEvent.change(searchFormTextInput, { target: { value: "Trumpton" } });
+    fireEvent.click(searchFormSubmitButton);
+
+    expect(await screen.findByText("City not found")).toBeInTheDocument();
   });
 });
