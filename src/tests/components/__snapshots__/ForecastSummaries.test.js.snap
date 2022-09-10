@@ -20,6 +20,7 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       </h2>
       <p
         class="forecast-summary__description"
+        data-testid="forecast-summary-description"
       >
         Clear
       </p>
@@ -57,6 +58,7 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       </h2>
       <p
         class="forecast-summary__description"
+        data-testid="forecast-summary-description"
       >
         Stormy
       </p>
@@ -94,6 +96,7 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       </h2>
       <p
         class="forecast-summary__description"
+        data-testid="forecast-summary-description"
       >
         Heavy Snow
       </p>
@@ -131,6 +134,7 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       </h2>
       <p
         class="forecast-summary__description"
+        data-testid="forecast-summary-description"
       >
         Tornado
       </p>
@@ -168,6 +172,7 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       </h2>
       <p
         class="forecast-summary__description"
+        data-testid="forecast-summary-description"
       >
         Hazy
       </p>

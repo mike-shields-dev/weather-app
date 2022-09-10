@@ -16,6 +16,7 @@ exports[`ForecastSummary matches snapshot 1`] = `
     </h2>
     <p
       class="forecast-summary__description"
+      data-testid="forecast-summary-description"
     >
       Clear
     </p>
