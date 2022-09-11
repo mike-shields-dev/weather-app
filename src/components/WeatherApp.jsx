@@ -52,7 +52,7 @@ export default function WeatherApp() {
   }, []);
 
   return (
-    <div className={styles["weather-app"]}>
+    <div className={`${styles["weather-app"]} shadow`}>
       <SearchForm
         handleChange={updateCity}
         handleSubmit={submitCitySearch}
