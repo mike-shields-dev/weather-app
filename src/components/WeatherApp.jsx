@@ -8,7 +8,7 @@ import SearchForm from "./SearchForm";
 import ErrorMessage from "./ErrorMessage";
 
 export default function WeatherApp() {
-  const [city, setCity] = useState("Manchester");
+  const [city, setCity] = useState("");
   const [location, setLocation] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
   const [forecasts, setForecasts] = useState([]);
@@ -45,9 +45,11 @@ export default function WeatherApp() {
       setLocation,
       setForecasts,
       setSelectedDate,
-      city: "Manchester",
+      setErrorMessage,
+      city,
     });
-  }, [city]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className={styles["weather-app"]}>
