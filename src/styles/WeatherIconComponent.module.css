@@ -1,0 +1,8 @@
+.weather-icon-component {
+    display: grid;
+    place-items: center;
+    width: 6rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgb(174, 218, 253);
+}

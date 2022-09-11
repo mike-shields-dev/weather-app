@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import WeatherIcon from "react-icons-weather";
+import styles from "../styles/ForecastSummary.module.css";
+import WeatherIconComponent from "./WeatherIconComponent";
 import FormattedDate from "./FormattedDate";
 
 export default function ForecastSummary({
@@ -11,9 +12,12 @@ export default function ForecastSummary({
   handleForecastSelect,
 }) {
   return (
-    <div className="forecast-summary" data-testid="forecast-summary">
+    <div
+      className={`${styles["forecast-summary"]} shadow`}
+      data-testid="forecast-summary"
+    >
       <h2
-        className="forecast-summary__date"
+        className={styles["forecast-summary__date"]}
         data-testid="forecast-summary-date"
       >
         <FormattedDate date={date} />
@@ -24,12 +28,7 @@ export default function ForecastSummary({
       >
         {description}
       </p>
-      <WeatherIcon
-        className="forecast-summary__icon"
-        data-testid="forecast-summary-icon"
-        iconId={icon}
-        name="owm"
-      />
+      <WeatherIconComponent iconId={icon} />
       <p
         className="forecast-summary__temperature"
         data-testid="forecast-summary-temperature"
@@ -37,7 +36,11 @@ export default function ForecastSummary({
         <span>{temperature.max}</span>
         °C
       </p>
-      <button type="button" onClick={() => handleForecastSelect(date)}>
+      <button
+        className="shadow"
+        type="button"
+        onClick={() => handleForecastSelect(date)}
+      >
         More details...
       </button>
     </div>
