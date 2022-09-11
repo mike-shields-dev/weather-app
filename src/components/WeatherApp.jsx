@@ -63,9 +63,12 @@ export default function WeatherApp() {
           handleClick={acknowledgeError}
         />
       ) : null}
-      {Object.keys(location).length ? <LocationDetails {...location} /> : null}
 
-      {forecasts.length && selectedForecast ? (
+      {!errorMessage && Object.keys(location).length ? (
+        <LocationDetails {...location} errorMessage={errorMessage} />
+      ) : null}
+
+      {!errorMessage && forecasts.length && selectedForecast ? (
         <>
           <ForecastSummaries
             forecasts={forecasts}
