@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WindDirectionIcon matches snapshot 1`] = `
+<DocumentFragment>
+  <img
+    alt="arrow pointing undefined"
+    class="wind-direction-icon"
+    data-testid="wind-direction-icon"
+    src="arrow-circle.png"
+    style="transform: rotate(0deg);"
+  />
+</DocumentFragment>
+`;
