@@ -28,31 +28,8 @@ describe("ForecastSummary", () => {
 
     expect(getByText(formattedDate)).toBeInTheDocument();
     expect(getByText(description)).toBeInTheDocument();
-    expect(getByTestId("forecast-summary-icon")).toBeInTheDocument();
+    expect(getByTestId("weather-icon-component")).toBeInTheDocument();
     expect(getByText(temperature.max)).toBeInTheDocument();
-  });
-
-  it("renders elements with correct class names", () => {
-    const { getByTestId } = render(
-      <ForecastSummary
-        data-testid="forecast-summary"
-        handleForecastSelect={jest.fn()}
-        {...dailyForecast}
-      />
-    );
-
-    expect(getByTestId("forecast-summary-date")).toHaveClass(
-      "forecast-summary__date"
-    );
-    expect(getByTestId("forecast-summary-description")).toHaveClass(
-      "forecast-summary__description"
-    );
-    expect(getByTestId("forecast-summary-icon")).toHaveClass(
-      "forecast-summary__icon"
-    );
-    expect(getByTestId("forecast-summary-temperature")).toHaveClass(
-      "forecast-summary__temperature"
-    );
   });
 
   it("More details... button should call handleForecastSelect callback", () => {

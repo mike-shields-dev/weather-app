@@ -20,11 +20,15 @@ exports[`ForecastSummary matches snapshot 1`] = `
     >
       Clear
     </p>
-    <i
-      class="wi wi-day-sunny forecast-summary__icon"
-      data-testid="forecast-summary-icon"
-      name="owm"
-    />
+    <div
+      class="weather-icon-component"
+      data-testid="weather-icon-component"
+    >
+      <i
+        class="wi wi-day-sunny"
+        name="owm"
+      />
+    </div>
     <p
       class="forecast-summary__temperature"
       data-testid="forecast-summary-temperature"
@@ -35,6 +39,7 @@ exports[`ForecastSummary matches snapshot 1`] = `
       °C
     </p>
     <button
+      class="shadow"
       type="button"
     >
       More details...
