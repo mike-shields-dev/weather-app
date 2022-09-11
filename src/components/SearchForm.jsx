@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "../styles/SearchForm.module.css";
 
 export default function SearchForm({
   handleChange,
@@ -10,7 +11,7 @@ export default function SearchForm({
   return (
     <div className="search-form" data-testid="search-form">
       <input
-        className="search-form__input"
+        className={`${styles["search-form__input"]} shadow`}
         data-testid="search-form-input"
         onChange={handleChange}
         type="text"
@@ -18,7 +19,7 @@ export default function SearchForm({
         value={searchText}
       />
       <button
-        className="search-form__button"
+        className="search-form__button shadow"
         data-testid="search-form-button"
         onClick={handleSubmit}
         type="submit"

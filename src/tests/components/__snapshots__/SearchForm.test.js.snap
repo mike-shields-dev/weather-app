@@ -7,14 +7,14 @@ exports[`SearchForm matches snapshot 1`] = `
     data-testid="search-form"
   >
     <input
-      class="search-form__input"
+      class="search-form__input shadow"
       data-testid="search-form-input"
       placeholder="Enter your search"
       type="text"
       value=""
     />
     <button
-      class="search-form__button"
+      class="search-form__button shadow"
       data-testid="search-form-button"
       type="submit"
     >
