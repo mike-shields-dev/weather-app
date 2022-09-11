@@ -20,6 +20,9 @@ export default async function getForecast({
     setForecasts(forecasts);
     setLocation(location);
   } catch (error) {
+    console.error(
+      `${error.response.status} ${errorMessages[error.response.status]}`
+    );
     setErrorMessage(errorMessages[error.response.status]);
   }
 }
