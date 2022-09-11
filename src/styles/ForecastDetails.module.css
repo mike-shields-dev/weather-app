@@ -2,3 +2,11 @@
     display: grid;
     place-items: center;
 }
+
+.forecast-details__wind {
+    display: flex;
+}
+
+.forecast-details__wind * {
+    margin: 0 .25rem;
+}

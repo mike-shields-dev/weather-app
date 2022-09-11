@@ -16,14 +16,16 @@ describe("ForecastDetails", () => {
   });
 
   it("renders formatted date, min and max temperature, humidity and wind speed and direction", () => {
-    const { getByText } = render(<ForecastDetails {...forecast} />);
+    const { getByText, getByTestId } = render(
+      <ForecastDetails {...forecast} />
+    );
 
     expect(getByText(formattedDate)).toBeInTheDocument();
     expect(getByText(humidity)).toBeInTheDocument();
     expect(getByText(temperature.max)).toBeInTheDocument();
     expect(getByText(temperature.min)).toBeInTheDocument();
     expect(getByText(wind.speed)).toBeInTheDocument();
-    expect(getByText(wind.direction)).toBeInTheDocument();
+    expect(getByTestId("wind-direction-icon")).toBeInTheDocument();
   });
 
   it("renders elements with correct class names", () => {

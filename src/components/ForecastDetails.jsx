@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "../styles/ForecastDetails.module.css";
 import FormattedDate from "./FormattedDate";
+import WindDirectionIcon from "./WindDirectionIcon";
 
 export default function ForecastDetails({ date, temperature, humidity, wind }) {
   return (
@@ -30,8 +31,12 @@ export default function ForecastDetails({ date, temperature, humidity, wind }) {
       >
         Humidity: <span>{humidity}</span>%
       </p>
-      <p className="forecast-details__wind" data-testid="forecast-details-wind">
-        <span>{wind.speed}</span>mph <span>{wind.direction}</span>
+      <p
+        className={styles["forecast-details__wind"]}
+        data-testid="forecast-details-wind"
+      >
+        <span>{wind.speed}</span>mph{" "}
+        <WindDirectionIcon direction={wind.direction} />
       </p>
     </div>
   );

@@ -5,7 +5,7 @@ import forecast from "../../data/forecast.json";
 import unixTimestampToHumanFormattedDate from "../../helpers/unixTimestampToFormattedDate";
 
 const dailyForecast = forecast.forecasts[0];
-const { date, description, icon, temperature } = dailyForecast;
+const { date, description, temperature } = dailyForecast;
 const formattedDate = unixTimestampToHumanFormattedDate(date);
 
 describe("ForecastSummary", () => {
@@ -33,7 +33,7 @@ describe("ForecastSummary", () => {
   });
 
   it("renders elements with correct class names", () => {
-    const { getByText, getByTestId } = render(
+    const { getByTestId } = render(
       <ForecastSummary
         data-testid="forecast-summary"
         handleForecastSelect={jest.fn()}
@@ -44,7 +44,9 @@ describe("ForecastSummary", () => {
     expect(getByTestId("forecast-summary-date")).toHaveClass(
       "forecast-summary__date"
     );
-    expect(getByTestId("forecast-summary-description")).toHaveClass("forecast-summary__description");
+    expect(getByTestId("forecast-summary-description")).toHaveClass(
+      "forecast-summary__description"
+    );
     expect(getByTestId("forecast-summary-icon")).toHaveClass(
       "forecast-summary__icon"
     );
