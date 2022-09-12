@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import unixTimestampToHumanReadableDate from "../helpers/unixTimestampToFormattedDate";
 
 export default function FormattedDate({ date }) {
-  const formattedDate = unixTimestampToHumanReadableDate(date);
-  return <span>{formattedDate}</span>;
+  return <span>{unixTimestampToHumanReadableDate(date)}</span>;
 }
 
 FormattedDate.propTypes = {
