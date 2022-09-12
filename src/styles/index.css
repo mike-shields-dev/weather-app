@@ -19,6 +19,7 @@ input[type="text"] {
   border-radius: 0.25rem;
   padding: 0.5rem;
   font-size: 1.025em;
+  outline-color: rgb(174, 218, 253);
 }
 
 button {

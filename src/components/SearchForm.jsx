@@ -11,7 +11,7 @@ export default function SearchForm({
   return (
     <div className="search-form" data-testid="search-form">
       <input
-        className={`${styles["search-form__input"]} shadow`}
+        className={`${styles["search-form__input"]}`}
         data-testid="search-form-input"
         onChange={handleChange}
         type="text"
