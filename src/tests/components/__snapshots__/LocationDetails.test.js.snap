@@ -9,7 +9,7 @@ exports[`LocationDetails matches snapshot 1`] = `
     <h1
       class="location-details__title"
     >
-      Manchester, UK
+      Lancaster, GB
     </h1>
   </header>
 </DocumentFragment>
