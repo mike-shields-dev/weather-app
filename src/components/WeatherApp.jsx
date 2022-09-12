@@ -58,18 +58,18 @@ export default function WeatherApp() {
         searchText={city}
         placeholder="Enter city name"
       />
-      {errorMessage ? (
+      {errorMessage && (
         <ErrorMessage
           errorMessage={errorMessage}
           handleClick={acknowledgeError}
         />
-      ) : null}
+      )}
 
-      {!errorMessage && Object.keys(location).length ? (
+      {!errorMessage && !!Object.keys(location).length && (
         <LocationDetails {...location} errorMessage={errorMessage} />
-      ) : null}
+      )}
 
-      {!errorMessage && forecasts.length && selectedForecast ? (
+      {!errorMessage && !!forecasts.length && selectedForecast && (
         <>
           <ForecastSummaries
             forecasts={forecasts}
@@ -77,7 +77,7 @@ export default function WeatherApp() {
           />
           <ForecastDetails {...selectedForecast} />
         </>
-      ) : null}
+      )}
     </div>
   );
 }
