@@ -6,7 +6,7 @@ export default function SearchForm({
   handleChange,
   handleSubmit,
   searchText,
-  placeholder,
+  placeholderText,
 }) {
   return (
     <div className="search-form" data-testid="search-form">
@@ -15,7 +15,7 @@ export default function SearchForm({
         data-testid="search-form-input"
         onChange={handleChange}
         type="text"
-        placeholder={placeholder}
+        placeholder={placeholderText}
         value={searchText}
       />
       <button
@@ -31,7 +31,7 @@ export default function SearchForm({
 }
 
 SearchForm.defaultProps = {
-  placeholder: "Enter your search",
+  placeholderText: "Enter your search",
   searchText: "",
 };
 
@@ -39,5 +39,5 @@ SearchForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   searchText: PropTypes.string,
-  placeholder: PropTypes.string,
+  placeholderText: PropTypes.string,
 };

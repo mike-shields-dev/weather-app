@@ -9,7 +9,7 @@ exports[`SearchForm matches snapshot 1`] = `
     <input
       class="search-form__input"
       data-testid="search-form-input"
-      placeholder="Enter your search"
+      placeholder="Enter city name"
       type="text"
       value=""
     />
