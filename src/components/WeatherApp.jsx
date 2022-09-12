@@ -22,15 +22,15 @@ export default function WeatherApp() {
     setCity("");
   }, []);
 
-  const handleForecastSelect = useCallback((date) => {
+  const handleForecastSelect = (date) => {
     setSelectedDate(date);
-  }, []);
+  };
 
-  const updateCity = useCallback((event) => {
+  const updateCity = (event) => {
     setCity(event.target.value);
-  }, []);
+  };
 
-  const submitCitySearch = useCallback(() => {
+  const submitCitySearch = () => {
     getForecast({
       setLocation,
       setForecasts,
@@ -38,7 +38,7 @@ export default function WeatherApp() {
       setErrorMessage,
       city,
     });
-  }, [city]);
+  };
 
   useEffect(() => {
     getForecast({
