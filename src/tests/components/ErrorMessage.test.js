@@ -2,42 +2,36 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import ErrorMessage from "../../components/ErrorMessage";
 
-const errorMessage = "City not found";
+const validProps = {
+  errorMessage: "City not found",
+  handleClick: jest.fn(),
+};
 
 describe("ErrorMessage", () => {
   it("matches snapshot", () => {
-    const { asFragment } = render(
-      <ErrorMessage errorMessage={errorMessage} handleClick={jest.fn()} />
-    );
+    const { asFragment } = render(<ErrorMessage {...validProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders an error message", () => {
-    const { getByText } = render(
-      <ErrorMessage errorMessage={errorMessage} handleClick={jest.fn()} />
-    );
+    const { getByText } = render(<ErrorMessage {...validProps} />);
 
-    expect(getByText("City not found")).toBeInTheDocument();
+    expect(getByText(validProps.errorMessage)).toBeInTheDocument();
   });
 
   it("renders an 'OK' button", () => {
-    const { getByText } = render(
-      <ErrorMessage errorMessage={errorMessage} handleClick={jest.fn()} />
-    );
+    const { getByText } = render(<ErrorMessage {...validProps} />);
 
     expect(getByText("OK")).toBeInTheDocument();
   });
 
   it("OK button calls handleClick callback", () => {
-    const handleClick = jest.fn();
-    const { getByText } = render(
-      <ErrorMessage errorMessage={errorMessage} handleClick={handleClick} />
-    );
+    const { getByText } = render(<ErrorMessage {...validProps} />);
     const okButton = getByText("OK");
 
     fireEvent.click(okButton);
 
-    expect(handleClick).toHaveBeenCalled();
+    expect(validProps.handleClick).toHaveBeenCalled();
   });
 });
