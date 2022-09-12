@@ -1,6 +1,11 @@
 .forecast-details {
     display: grid;
     place-items: center;
+    padding: 2rem;
+}
+
+.forecast-details__temperature-max {
+    margin-top: 1rem;
 }
 
 .forecast-details__wind {

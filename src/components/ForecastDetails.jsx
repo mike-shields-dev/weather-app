@@ -8,13 +8,13 @@ export default function ForecastDetails({ date, temperature, humidity, wind }) {
   return (
     <div className={styles["forecast-details"]} data-testid="forecast-details">
       <h2
-        className="forecast-details__date"
+        className={styles["forecast-details__date"]}
         data-testid="forecast-details-date"
       >
         <FormattedDate date={date} />
       </h2>
       <p
-        className="forecast-details__temperature-max"
+        className={styles["forecast-details__temperature-max"]}
         data-testid="forecast-details-temperature-max"
       >
         Max Temperature: <span>{temperature.max}</span> °C
