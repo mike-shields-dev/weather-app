@@ -46,9 +46,8 @@ export default function WeatherApp() {
       setForecasts,
       setSelectedDate,
       setErrorMessage,
-      city,
+      city: "",
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
