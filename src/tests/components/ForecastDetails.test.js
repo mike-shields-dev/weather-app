@@ -1,23 +1,36 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import ForecastDetails from "../../components/ForecastDetails";
-import { forecasts } from "../../data/forecast.json";
 import unixTimestampToFormattedDate from "../../helpers/unixTimestampToFormattedDate";
 
-const [forecast] = forecasts;
-const { date, temperature, humidity, wind } = forecast;
+const validProps = {
+  date: 1525046400000,
+  temperature: {
+    max: 11,
+    min: 4,
+  },
+  wind: {
+    speed: 13,
+    direction: "s",
+  },
+  humidity: 30,
+  description: "Clear",
+  icon: 800,
+};
+
+const { date, temperature, humidity, wind } = validProps;
 const formattedDate = unixTimestampToFormattedDate(date);
 
 describe("ForecastDetails", () => {
   it("matches snapshot", () => {
-    const { asFragment } = render(<ForecastDetails {...forecast} />);
+    const { asFragment } = render(<ForecastDetails {...validProps} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders formatted date, min and max temperature, humidity and wind speed and direction", () => {
     const { getByText, getByTestId } = render(
-      <ForecastDetails {...forecast} />
+      <ForecastDetails {...validProps} />
     );
 
     expect(getByText(formattedDate)).toBeInTheDocument();
@@ -29,7 +42,7 @@ describe("ForecastDetails", () => {
   });
 
   it("renders elements with correct class names", () => {
-    const { getByTestId } = render(<ForecastDetails {...forecast} />);
+    const { getByTestId } = render(<ForecastDetails {...validProps} />);
 
     expect(getByTestId("forecast-details-date")).toHaveClass(
       "forecast-details__date"
