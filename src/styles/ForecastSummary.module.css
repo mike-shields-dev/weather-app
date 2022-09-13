@@ -1,22 +1,20 @@
 .forecast-summary {
-    display: grid;
-    place-items: center;
-    padding: 0.5rem 0.5rem 1rem;
-    margin-right: 1rem;
-    flex-grow: 1;
-    border-radius: 0.5rem;
-    background: rgba(0, 0, 0, 0);
-    box-shadow: 
-        0.1rem 0.1rem 0.2rem 0 rgba(255, 255, 255, 0.25) inset, 
-        0.25rem 0.25rem 0.45rem 0 rgba(0, 0, 0, 0.125),
-        -0.1rem -0.1rem 0.2rem 0 rgba(0, 0, 0, 0.05) inset
-        ;
+  display: grid;
+  place-items: center;
+  padding: 0.5rem 0.5rem 1rem;
+  margin-right: 1rem;
+  flex-grow: 1;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: 0.1rem 0.1rem 0.2rem 0 rgba(255, 255, 255, 0.25) inset,
+    0.25rem 0.25rem 0.45rem 0 rgba(0, 0, 0, 0.125),
+    -0.1rem -0.1rem 0.2rem 0 rgba(0, 0, 0, 0.05) inset;
 }
 
 .forecast-summary:last-of-type {
-    margin: 0;
+  margin: 0;
 }
 
 .forecast-summary__date {
-    padding: 0.625rem 0;
+  padding: 0.625rem 0;
 }

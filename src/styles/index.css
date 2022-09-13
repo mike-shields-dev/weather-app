@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap");
 
 * {
   margin: 0;
@@ -15,14 +15,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 p {
   font-size: 1.125em;
   margin: 0 auto 1em;
 }
 
 h1 {
-  margin: 0.5rem auto 1rem;;
+  margin: 0.5rem auto 1rem;
 }
 
 h2 {
@@ -43,7 +42,7 @@ button {
   padding: 0.5rem;
   font-size: 1.025em;
   color: white;
-  background:rgba(23, 61, 118, 0.431);
+  background: rgba(23, 61, 118, 0.431);
 }
 
 button:active {
@@ -52,7 +51,7 @@ button:active {
 }
 
 button:hover {
- cursor: pointer;
+  cursor: pointer;
 }
 
 .shadow {

@@ -1,17 +1,17 @@
 .forecast-details {
-    display: grid;
-    place-items: center;
-    padding: 2rem;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
 }
 
 .forecast-details__temperature-max {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .forecast-details__wind {
-    display: flex;
+  display: flex;
 }
 
 .forecast-details__wind * {
-    margin: 0 .25rem;
+  margin: 0 0.25rem;
 }
