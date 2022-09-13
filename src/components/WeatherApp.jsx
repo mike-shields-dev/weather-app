@@ -52,12 +52,14 @@ const WeatherApp = () => {
 
   return (
     <div className={`${styles["weather-app"]} shadow`}>
-      <SearchForm
-        handleChange={updateCity}
-        handleSubmit={submitCitySearch}
-        searchText={city}
-        placeholder="Enter city name"
-      />
+      {!errorMessage && (
+        <SearchForm
+          handleChange={updateCity}
+          handleSubmit={submitCitySearch}
+          searchText={city}
+          placeholder="Enter city name"
+        />
+      )}
       {errorMessage && (
         <ErrorMessage
           errorMessage={errorMessage}
