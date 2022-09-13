@@ -4,7 +4,7 @@ import arrowCircle from "../assets/img/arrow-circle.png";
 import directionLookup from "../data/directionLookup.json";
 import styles from "../styles/WindDirectionIcon.module.css";
 
-export default function WindDirectionIcon({ direction }) {
+const WindDirectionIcon = ({ direction }) => {
   return (
     <img
       className={styles["wind-direction-icon"]}
@@ -16,8 +16,10 @@ export default function WindDirectionIcon({ direction }) {
       alt={`arrow pointing ${directionLookup[direction.humanReadable]}`}
     />
   );
-}
+};
 
 WindDirectionIcon.propTypes = {
   direction: PropTypes.string.isRequired,
 };
+
+export default WindDirectionIcon;

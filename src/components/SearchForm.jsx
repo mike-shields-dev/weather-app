@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "../styles/SearchForm.module.css";
 
-export default function SearchForm({
+const SearchForm = ({
   handleChange,
   handleSubmit,
   searchText,
   placeholderText,
-}) {
+}) => {
   return (
     <div className="search-form" data-testid="search-form">
       <input
@@ -28,7 +28,7 @@ export default function SearchForm({
       </button>
     </div>
   );
-}
+};
 
 SearchForm.defaultProps = {
   placeholderText: "Enter your search",
@@ -41,3 +41,5 @@ SearchForm.propTypes = {
   searchText: PropTypes.string,
   placeholderText: PropTypes.string,
 };
+
+export default SearchForm;

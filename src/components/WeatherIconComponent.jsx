@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import WeatherIcon from "react-icons-weather";
 import styles from "../styles/WeatherIconComponent.module.css";
 
-export default function WeatherIconComponent({ iconId }) {
+const WeatherIconComponent = ({ iconId }) => {
   return (
     <div
       className={styles["weather-icon-component"]}
@@ -16,8 +16,10 @@ export default function WeatherIconComponent({ iconId }) {
       />
     </div>
   );
-}
+};
 
 WeatherIconComponent.propTypes = {
   iconId: PropTypes.string.isRequired,
 };
+
+export default WeatherIconComponent;

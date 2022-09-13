@@ -4,7 +4,7 @@ import styles from "../styles/ForecastDetails.module.css";
 import FormattedDate from "./FormattedDate";
 import WindDirectionIcon from "./WindDirectionIcon";
 
-export default function ForecastDetails({ date, temperature, humidity, wind }) {
+const ForecastDetails = ({ date, temperature, humidity, wind }) => {
   return (
     <div className={styles["forecast-details"]} data-testid="forecast-details">
       <h2
@@ -40,7 +40,7 @@ export default function ForecastDetails({ date, temperature, humidity, wind }) {
       </p>
     </div>
   );
-}
+};
 
 ForecastDetails.propTypes = {
   date: PropTypes.number.isRequired,
@@ -54,3 +54,5 @@ ForecastDetails.propTypes = {
   }).isRequired,
   humidity: PropTypes.number.isRequired,
 };
+
+export default ForecastDetails;

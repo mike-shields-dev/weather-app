@@ -7,7 +7,7 @@ import ForecastDetails from "./ForecastDetails";
 import SearchForm from "./SearchForm";
 import ErrorMessage from "./ErrorMessage";
 
-export default function WeatherApp() {
+const WeatherApp = () => {
   const [city, setCity] = useState("");
   const [location, setLocation] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
@@ -80,4 +80,6 @@ export default function WeatherApp() {
       )}
     </div>
   );
-}
+};
+
+export default WeatherApp;

@@ -4,13 +4,13 @@ import styles from "../styles/ForecastSummary.module.css";
 import WeatherIconComponent from "./WeatherIconComponent";
 import FormattedDate from "./FormattedDate";
 
-export default function ForecastSummary({
+const ForecastSummary = ({
   date,
   description,
   icon,
   temperature,
   handleForecastSelect,
-}) {
+}) => {
   return (
     <div
       className={`${styles["forecast-summary"]} shadow`}
@@ -45,7 +45,7 @@ export default function ForecastSummary({
       </button>
     </div>
   );
-}
+};
 
 ForecastSummary.propTypes = {
   date: PropTypes.number.isRequired,
@@ -57,3 +57,5 @@ ForecastSummary.propTypes = {
   }).isRequired,
   handleForecastSelect: PropTypes.func.isRequired,
 };
+
+export default ForecastSummary;

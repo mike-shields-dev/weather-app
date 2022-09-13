@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function ErrorMessage({ errorMessage, handleClick }) {
+const ErrorMessage = ({ errorMessage, handleClick }) => {
   return (
     <div className="error-message">
       <p className="error-message__text">{errorMessage}</p>
@@ -14,9 +14,11 @@ export default function ErrorMessage({ errorMessage, handleClick }) {
       </button>
     </div>
   );
-}
+};
 
 ErrorMessage.propTypes = {
   errorMessage: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
 };
+
+export default ErrorMessage;

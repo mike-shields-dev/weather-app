@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styles from "../styles/ForecastSummaries.module.css";
 import ForecastSummary from "./ForecastSummary";
 
-export default function ForecastSummaries({ forecasts, handleForecastSelect }) {
+const ForecastSummaries = ({ forecasts, handleForecastSelect }) => {
   return (
     <div
       className={styles["forecast-summaries"]}
@@ -20,7 +20,7 @@ export default function ForecastSummaries({ forecasts, handleForecastSelect }) {
       })}
     </div>
   );
-}
+};
 
 ForecastSummaries.propTypes = {
   forecasts: PropTypes.arrayOf(
@@ -36,3 +36,5 @@ ForecastSummaries.propTypes = {
   ).isRequired,
   handleForecastSelect: PropTypes.func.isRequired,
 };
+
+export default ForecastSummaries;
