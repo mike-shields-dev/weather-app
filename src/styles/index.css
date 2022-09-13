@@ -1,3 +1,8 @@
+:root {
+  --light: rgb(238, 238, 238);
+  --dark: #142d50;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap");
 
 * {
@@ -6,10 +11,11 @@
 }
 
 body {
+  letter-spacing: 0.075em;
+  height: 100vh;
   font-family: Urbanist;
-  letter-spacing: 0.025em;
-  color: rgb(56, 56, 56);
-  background: rgb(17, 17, 17);
+  color: var(--light);
+  background-image: linear-gradient(to top, var(--dark) 0%, #537895 100%);
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,20 +26,22 @@ p {
   margin: 0 auto 1em;
 }
 
-h1 {
-  margin: 0.5rem auto 1rem;
-}
-
 h2 {
   margin-bottom: 0.5rem;
 }
 
+h1, h2 {
+  letter-spacing: 0.075em;
+}
+
 input[type="text"] {
+  color: var(--dark);
   border: none;
   border-radius: 0.25rem;
   padding: 0.5rem;
   font-size: 1.025em;
-  outline-color: rgb(174, 218, 253);
+  outline-color: var(--light);
+  background: rgba(255, 255, 255, 0.8);
 }
 
 button {
@@ -41,8 +49,8 @@ button {
   border-radius: 0.25rem;
   padding: 0.5rem;
   font-size: 1.025em;
-  color: white;
-  background: rgba(23, 61, 118, 0.431);
+  color: var(--light);
+  background: var(--dark);
 }
 
 button:active {

@@ -9,7 +9,7 @@ exports[`WeatherIconComponent matches snapshot 1`] = `
     <i
       class="wi wi-day-sunny"
       name="owm"
-      style="transform: scale(2.75); color: rgb(255, 255, 255);"
+      style="transform: scale(2.75);"
     />
   </div>
 </DocumentFragment>

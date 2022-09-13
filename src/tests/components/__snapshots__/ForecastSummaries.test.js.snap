@@ -7,23 +7,15 @@ exports[`ForecastSummaries matches snapshot 1`] = `
     data-testid="forecast-summaries"
   >
     <div
-      class="forecast-summary shadow"
+      class="forecast-summary"
       data-testid="forecast-summary"
     >
       <h2
         class="forecast-summary__date"
         data-testid="forecast-summary-date"
       >
-        <span>
-          Mon 30th Apr
-        </span>
+        Monday
       </h2>
-      <p
-        class="forecast-summary__description"
-        data-testid="forecast-summary-description"
-      >
-        Clear
-      </p>
       <div
         class="weather-icon-component"
         data-testid="weather-icon-component"
@@ -31,9 +23,15 @@ exports[`ForecastSummaries matches snapshot 1`] = `
         <i
           class="wi wi-day-sunny"
           name="owm"
-          style="transform: scale(2.75); color: rgb(255, 255, 255);"
+          style="transform: scale(2.75);"
         />
       </div>
+      <p
+        class="forecast-summary__description"
+        data-testid="forecast-summary-description"
+      >
+        Clear
+      </p>
       <p
         class="forecast-summary__temperature"
         data-testid="forecast-summary-temperature"
@@ -51,23 +49,15 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       </button>
     </div>
     <div
-      class="forecast-summary shadow"
+      class="forecast-summary"
       data-testid="forecast-summary"
     >
       <h2
         class="forecast-summary__date"
         data-testid="forecast-summary-date"
       >
-        <span>
-          Tue 1st May
-        </span>
+        Tuesday
       </h2>
-      <p
-        class="forecast-summary__description"
-        data-testid="forecast-summary-description"
-      >
-        Stormy
-      </p>
       <div
         class="weather-icon-component"
         data-testid="weather-icon-component"
@@ -75,9 +65,15 @@ exports[`ForecastSummaries matches snapshot 1`] = `
         <i
           class="wi wi-day-thunderstorm"
           name="owm"
-          style="transform: scale(2.75); color: rgb(255, 255, 255);"
+          style="transform: scale(2.75);"
         />
       </div>
+      <p
+        class="forecast-summary__description"
+        data-testid="forecast-summary-description"
+      >
+        Stormy
+      </p>
       <p
         class="forecast-summary__temperature"
         data-testid="forecast-summary-temperature"
@@ -95,23 +91,15 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       </button>
     </div>
     <div
-      class="forecast-summary shadow"
+      class="forecast-summary"
       data-testid="forecast-summary"
     >
       <h2
         class="forecast-summary__date"
         data-testid="forecast-summary-date"
       >
-        <span>
-          Wed 2nd May
-        </span>
+        Wednesday
       </h2>
-      <p
-        class="forecast-summary__description"
-        data-testid="forecast-summary-description"
-      >
-        Heavy Snow
-      </p>
       <div
         class="weather-icon-component"
         data-testid="weather-icon-component"
@@ -119,9 +107,15 @@ exports[`ForecastSummaries matches snapshot 1`] = `
         <i
           class="wi wi-day-snow"
           name="owm"
-          style="transform: scale(2.75); color: rgb(255, 255, 255);"
+          style="transform: scale(2.75);"
         />
       </div>
+      <p
+        class="forecast-summary__description"
+        data-testid="forecast-summary-description"
+      >
+        Heavy Snow
+      </p>
       <p
         class="forecast-summary__temperature"
         data-testid="forecast-summary-temperature"

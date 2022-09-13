@@ -12,7 +12,7 @@ const WeatherIconComponent = ({ iconId }) => {
       <WeatherIcon
         iconId={iconId}
         name="owm"
-        style={{ transform: "scale(2.75)", color: "#fff" }}
+        style={{ transform: "scale(2.75)" }}
       />
     </div>
   );

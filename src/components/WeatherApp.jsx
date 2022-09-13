@@ -51,25 +51,27 @@ const WeatherApp = () => {
   }, []);
 
   return (
-    <div className={`${styles["weather-app"]} shadow`}>
-      {!errorMessage && (
-        <SearchForm
-          handleChange={updateCity}
-          handleSubmit={submitCitySearch}
-          searchText={city}
-          placeholder="Enter city name"
-        />
-      )}
-      {errorMessage && (
-        <ErrorMessage
-          errorMessage={errorMessage}
-          handleClick={acknowledgeError}
-        />
-      )}
+    <div className={styles["weather-app"]}>
+      <div className={styles["weather-app__header"]}>
+        {!errorMessage && (
+          <SearchForm
+            handleChange={updateCity}
+            handleSubmit={submitCitySearch}
+            searchText={city}
+            placeholder="Enter city name"
+          />
+        )}
+        {errorMessage && (
+          <ErrorMessage
+            errorMessage={errorMessage}
+            handleClick={acknowledgeError}
+          />
+        )}
 
-      {!errorMessage && !!Object.keys(location).length && (
-        <LocationDetails {...location} errorMessage={errorMessage} />
-      )}
+        {!errorMessage && !!Object.keys(location).length && (
+          <LocationDetails {...location} errorMessage={errorMessage} />
+        )}
+      </div>
 
       {!errorMessage && !!forecasts.length && selectedForecast && (
         <>

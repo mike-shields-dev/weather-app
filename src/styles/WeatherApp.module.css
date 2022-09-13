@@ -1,6 +1,11 @@
 .weather-app {
-  margin: 1rem;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  background: rgb(215, 215, 238);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.weather-app__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
 }

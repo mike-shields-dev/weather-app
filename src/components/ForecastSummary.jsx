@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "../styles/ForecastSummary.module.css";
 import WeatherIconComponent from "./WeatherIconComponent";
-import FormattedDate from "./FormattedDate";
+// import FormattedDate from "./FormattedDate";
 
 const ForecastSummary = ({
   date,
@@ -11,24 +11,31 @@ const ForecastSummary = ({
   temperature,
   handleForecastSelect,
 }) => {
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const day = days[new Date(date).getDay()];
   return (
-    <div
-      className={`${styles["forecast-summary"]} shadow`}
-      data-testid="forecast-summary"
-    >
+    <div className={styles["forecast-summary"]} data-testid="forecast-summary">
       <h2
         className={styles["forecast-summary__date"]}
         data-testid="forecast-summary-date"
       >
-        <FormattedDate date={date} />
+        {day}
       </h2>
+      <WeatherIconComponent iconId={icon} />
       <p
         className="forecast-summary__description"
         data-testid="forecast-summary-description"
       >
         {description}
       </p>
-      <WeatherIconComponent iconId={icon} />
       <p
         className="forecast-summary__temperature"
         data-testid="forecast-summary-temperature"

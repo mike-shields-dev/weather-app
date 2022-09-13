@@ -52,13 +52,23 @@ exports[`ForecastDetails matches snapshot 1`] = `
         13
       </span>
       mph 
-      <img
-        alt="arrow pointing undefined"
+      <svg
         class="wind-direction-icon"
         data-testid="wind-direction-icon"
-        src="arrow-circle.png"
+        fill="currentColor"
         style="transform: rotate(180deg);"
-      />
+        version="1.1"
+        viewBox="0 0 490 490"
+        x="0px"
+        y="0px"
+      >
+        <title>
+          arrow pointing south
+        </title>
+        <path
+          d="M480.086,490L245,339.229L9.914,490L245,0L480.086,490z"
+        />
+      </svg>
     </p>
   </div>
 </DocumentFragment>

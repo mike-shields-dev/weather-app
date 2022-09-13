@@ -1,7 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import ForecastSummary from "../../components/ForecastSummary";
-import unixTimestampToHumanFormattedDate from "../../helpers/unixTimestampToFormattedDate";
 
 const validProps = {
   date: 1525046400000,
@@ -20,7 +19,6 @@ const validProps = {
 };
 
 const { date, description, temperature } = validProps;
-const formattedDate = unixTimestampToHumanFormattedDate(date);
 
 describe("ForecastSummary", () => {
   it("matches snapshot", () => {
@@ -30,11 +28,21 @@ describe("ForecastSummary", () => {
   });
 
   it("renders formatted date, description, icon and temperature", () => {
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const dayOfWeek = days[new Date(date).getDay()];
     const { getByText, getByTestId } = render(
       <ForecastSummary data-testid="forecast-summary" {...validProps} />
     );
 
-    expect(getByText(formattedDate)).toBeInTheDocument();
+    expect(getByText(dayOfWeek)).toBeInTheDocument();
     expect(getByText(description)).toBeInTheDocument();
     expect(getByTestId("weather-icon-component")).toBeInTheDocument();
     expect(getByText(temperature.max)).toBeInTheDocument();
