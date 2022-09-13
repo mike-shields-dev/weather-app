@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function ErrorModal({ errorMessage, handleClick }) {
+export default function ErrorMessage({ errorMessage, handleClick }) {
   return (
     <div className="error-message">
       <p className="error-message__text">{errorMessage}</p>
@@ -16,7 +16,7 @@ export default function ErrorModal({ errorMessage, handleClick }) {
   );
 }
 
-ErrorModal.propTypes = {
+ErrorMessage.propTypes = {
   errorMessage: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
 };
