@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "../styles/ErrorMessage.module.css";
 
 const ErrorMessage = ({ errorMessage, handleClick }) => {
   return (
-    <div className="error-message">
-      <p className="error-message__text">{errorMessage}</p>
+    <div className={styles["error-message"]}>
+      <span className={styles["error-message__text"]}>{errorMessage}</span>
       <button
-        className="error-message__button"
+        className={styles["error-message__button"]}
         onClick={handleClick}
         type="button"
       >

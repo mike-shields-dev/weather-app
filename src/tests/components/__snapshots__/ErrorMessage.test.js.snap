@@ -5,11 +5,11 @@ exports[`ErrorMessage matches snapshot 1`] = `
   <div
     class="error-message"
   >
-    <p
+    <span
       class="error-message__text"
     >
       City not found
-    </p>
+    </span>
     <button
       class="error-message__button"
       type="button"
