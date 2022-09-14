@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "../styles/ForecastSummary.module.css";
 import WeatherIconComponent from "./WeatherIconComponent";
-// import FormattedDate from "./FormattedDate";
+import weekdayFromUnixTime from "../helpers/weekdayFromUnixTime";
 
 const ForecastSummary = ({
   date,
@@ -11,23 +11,15 @@ const ForecastSummary = ({
   temperature,
   handleForecastSelect,
 }) => {
-  const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const day = days[new Date(date).getDay()];
+  const isDateToday = new Date().getDay() === new Date(date).getDay();
+
   return (
     <div className={styles["forecast-summary"]} data-testid="forecast-summary">
       <h2
         className={styles["forecast-summary__date"]}
         data-testid="forecast-summary-date"
       >
-        {day}
+        {isDateToday ? "Today" : weekdayFromUnixTime(date)}
       </h2>
       <WeatherIconComponent iconId={icon} />
       <p
