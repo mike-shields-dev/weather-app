@@ -8,7 +8,7 @@ const LocationDetails = ({ city, country }) => {
       className={styles["location-details"]}
       data-testid="location-details"
     >
-      <h1 className="location-details__title">
+      <h1 className={styles["location-details__title"]}>
         {city}, {country}
       </h1>
     </header>
