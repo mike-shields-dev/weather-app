@@ -1,6 +1,8 @@
 :root {
-  --light: rgb(238, 238, 238);
-  --dark: #142d50;
+  --white: rgb(247, 247, 247);
+  --light: #9fcfff;
+  --mid: #2b4b64; 
+  --dark: #0e1f36;
   --bg-opacity: 0.0625;
   --shadow-opacity: 0.125;
 }
@@ -16,9 +18,8 @@ body {
   letter-spacing: 0.075em;
   height: 100vh;
   font-family: Urbanist;
-  color: var(--light);
-  background-image: linear-gradient(to top, var(--dark) 0%, #537895 100%);
-  margin: 0;
+  color: var(--white);
+  background-image: linear-gradient(to top, var(--dark) 0%, var(--mid) 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -52,7 +53,7 @@ button {
   border-radius: 0.25rem;
   padding: 0.5rem;
   font-size: 1.025em;
-  color: var(--light);
+  color: var(--white);
   background: var(--dark);
 }
 
