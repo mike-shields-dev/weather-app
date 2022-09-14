@@ -17,8 +17,7 @@ const validProps = {
   icon: "800",
   handleForecastSelect: jest.fn(),
 };
-
-const { date, description, temperature } = validProps;
+const { description, temperature } = validProps;
 
 describe("ForecastSummary", () => {
   it("matches snapshot", () => {
@@ -27,28 +26,60 @@ describe("ForecastSummary", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("renders formatted date, description, icon and temperature", () => {
-    const days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    const dayOfWeek = days[new Date(date).getDay()];
-    const { getByText, getByTestId } = render(
+  it("displays correct day of week, or 'Today'", () => {
+    const weekdayUnixTimeLookUp = {
+      Sunday: 1662883154000,
+      Monday: 1662969554000,
+      Tuesday: 1663055954000,
+      Wednesday: 1663142354000,
+      Thursday: 1663228754000,
+      Friday: 1663315154000,
+      Saturday: 1663401554000,
+    };
+
+    Object.entries(weekdayUnixTimeLookUp).forEach(([weekday, unixTime]) => {
+      const { getByText } = render(
+        <ForecastSummary
+          data-testid="forecast-summary"
+          {...validProps}
+          date={weekdayUnixTimeLookUp[weekday]}
+        />
+      );
+      const isToday = new Date(unixTime).getDay() === new Date().getDay();
+
+      if (isToday) {
+        expect(getByText("Today")).toBeInTheDocument();
+      } else {
+        expect(getByText(weekday)).toBeInTheDocument();
+      }
+    });
+  });
+
+  it("displays description", () => {
+    const { getByText } = render(
       <ForecastSummary data-testid="forecast-summary" {...validProps} />
     );
 
-    expect(getByText(dayOfWeek)).toBeInTheDocument();
     expect(getByText(description)).toBeInTheDocument();
+  });
+
+  it("displays a weather icon", () => {
+    const { getByTestId } = render(
+      <ForecastSummary data-testid="forecast-summary" {...validProps} />
+    );
+
     expect(getByTestId("weather-icon-component")).toBeInTheDocument();
+  });
+
+  it("displays temperature", () => {
+    const { getByText } = render(
+      <ForecastSummary data-testid="forecast-summary" {...validProps} />
+    );
+
     expect(getByText(temperature.max)).toBeInTheDocument();
   });
 
-  it("More details... button should call handleForecastSelect callback", () => {
+  it("displays a 'More details...' button which calls handleForecastSelect callback when clicked", () => {
     const { getByText } = render(
       <ForecastSummary data-testid="forecast-summary" {...validProps} />
     );
