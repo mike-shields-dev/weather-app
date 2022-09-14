@@ -1,14 +1,32 @@
 .forecast-details {
   display: grid;
+  grid-template-areas: 
+    "date date date date"
+    "temp-min temp-max humidity wind";
   place-items: center;
-  padding: 2rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, var(--bg-opacity));
+}
+
+.forecast-details__date {
+  grid-area: date;
+  padding: 0.5rem;
+}
+
+.forecast-details__humidity {
+  grid-area: humidity;
+}
+
+.forecast-details__temperature-min {
+  grid-area: temp-min;
 }
 
 .forecast-details__temperature-max {
-  margin-top: 1rem;
+  grid-area: temp-max;
 }
 
 .forecast-details__wind {
+  grid-area: wind;
   display: flex;
 }
 
