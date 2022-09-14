@@ -19,6 +19,34 @@ The assignment is an opportunity to explore:
 - Consuming and rendering data returned from the API
 - [Rendering lists and managing the `keys` prop](https://reactjs.org/docs/lists-and-keys.html), using JavaScript method [Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
 
+## Development Environment Setup and Usage
+
+- Clone the repository to directory on your local machine
+    ```bash
+    $ git clone https://github.com/mike-shields-dev/weather-app.git
+    ```
+- Switch your terminal's context to the cloned repositorie's directory
+    ```bash
+    $ cd weather-app
+    ```
+- Open the directory in your IDE (Visual Studio Code)
+    ```bash
+    $ code .
+    ```
+- With [nodeJS](https://nodejs.org/en/) setup on your machine, install the npm dependencies
+    ```bash
+    $ npm install
+    ```
+- To view the application live in the browser
+    ```bash
+    $ npm start
+    ```
+     If not automatically done, Open your web browser and navigate to: [https://localhost:3000](https://localhost:3000) to view the application via [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)'s development server.
+- To run tests
+    ```
+    $ npm test
+    ```
+
 ## Feature WishList
 
 - Make use of the browsers [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) and third party API's to determine the weather in the nearest city to the user.
