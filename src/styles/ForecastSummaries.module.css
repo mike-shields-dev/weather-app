@@ -2,6 +2,11 @@
   display: flex;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  background: rgba(0, 0, 0, 0.0625);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, var(--bg-opacity));
+}
+
+@media screen and (max-width: 1200px) {
+  .forecast-summaries {
+    display: grid;
+  }
 }

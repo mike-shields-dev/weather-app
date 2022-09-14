@@ -7,7 +7,7 @@ exports[`ForecastSummaries matches snapshot 1`] = `
     data-testid="forecast-summaries"
   >
     <div
-      class="forecast-summary"
+      class="forecast-summary null"
       data-testid="forecast-summary"
     >
       <h2
@@ -49,7 +49,7 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       </button>
     </div>
     <div
-      class="forecast-summary"
+      class="forecast-summary null"
       data-testid="forecast-summary"
     >
       <h2
@@ -91,7 +91,7 @@ exports[`ForecastSummaries matches snapshot 1`] = `
       </button>
     </div>
     <div
-      class="forecast-summary"
+      class="forecast-summary null"
       data-testid="forecast-summary"
     >
       <h2

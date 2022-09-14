@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 import styles from "../styles/ForecastSummaries.module.css";
 import ForecastSummary from "./ForecastSummary";
 
-const ForecastSummaries = ({ forecasts, handleForecastSelect }) => {
+const ForecastSummaries = ({
+  forecasts,
+  handleForecastSelect,
+  selectedDate,
+}) => {
   return (
     <div
       className={styles["forecast-summaries"]}
@@ -12,8 +16,9 @@ const ForecastSummaries = ({ forecasts, handleForecastSelect }) => {
       {forecasts.map((forecast) => {
         return (
           <ForecastSummary
-            key={`forecast-summary-${forecast.date}`}
             handleForecastSelect={handleForecastSelect}
+            key={`forecast-summary-${forecast.date}`}
+            selectedDate={selectedDate}
             {...forecast}
           />
         );
@@ -35,6 +40,7 @@ ForecastSummaries.propTypes = {
     })
   ).isRequired,
   handleForecastSelect: PropTypes.func.isRequired,
+  selectedDate: PropTypes.number.isRequired,
 };
 
 export default ForecastSummaries;
