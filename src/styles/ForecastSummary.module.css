@@ -10,5 +10,10 @@
 }
 
 .forecast-summary__date {
-  padding: 0.625rem 0;
+  padding: 0.5rem 0;
+}
+
+.forecast-summary--selected {
+  border-radius: 0.25rem;
+  background: rgba(255, 255, 255, 0.0625);
 }

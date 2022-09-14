@@ -7,14 +7,21 @@ import weekdayFromUnixTime from "../helpers/weekdayFromUnixTime";
 const ForecastSummary = ({
   date,
   description,
+  handleForecastSelect,
   icon,
   temperature,
-  handleForecastSelect,
+  selectedDate,
 }) => {
   const isDateToday = new Date().getDay() === new Date(date).getDay();
-
+  const isSelected = date === selectedDate;
+  const modifierClass = styles["forecast-summary--selected"];
   return (
-    <div className={styles["forecast-summary"]} data-testid="forecast-summary">
+    <div
+      className={`${styles["forecast-summary"]} ${
+        isSelected ? modifierClass : null
+      }`}
+      data-testid="forecast-summary"
+    >
       <h2
         className={styles["forecast-summary__date"]}
         data-testid="forecast-summary-date"
@@ -49,12 +56,13 @@ const ForecastSummary = ({
 ForecastSummary.propTypes = {
   date: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
+  handleForecastSelect: PropTypes.func.isRequired,
   icon: PropTypes.string.isRequired,
+  selectedDate: PropTypes.number.isRequired,
   temperature: PropTypes.shape({
     max: PropTypes.number,
     min: PropTypes.number,
   }).isRequired,
-  handleForecastSelect: PropTypes.func.isRequired,
 };
 
 export default ForecastSummary;
