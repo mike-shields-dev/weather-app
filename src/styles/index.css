@@ -5,6 +5,7 @@
   --dark: #0e1f36;
   --bg-opacity: 0.125;
   --shadow-opacity: 0.125;
+  --whitespace: 4vw;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap");
