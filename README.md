@@ -52,3 +52,4 @@ The assignment is an opportunity to explore:
 
 - Make use of the browsers [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) and third party API's to determine the weather in the nearest city to the user.
 - Switch to an API with a richer offering, to allow additional features to be added, to allow users to make requests for forecasts with different time frames (hourly, day, 14 days 2weeks).
+- Light and Dark Theme
