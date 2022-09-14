@@ -1,4 +1,5 @@
-# Weather App
+# Weather App 
+*Author: Michael Shields*
 
 ## Introduction
 
@@ -50,4 +51,4 @@ The assignment is an opportunity to explore:
 ## Feature WishList
 
 - Make use of the browsers [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) and third party API's to determine the weather in the nearest city to the user.
-- Allow the user to make requests for forecasts with different time frames (day, 14 days 2weeks).
+- Switch to an API with a richer offering, to allow additional features to be added, to allow users to make requests for forecasts with different time frames (hourly, day, 14 days 2weeks).
