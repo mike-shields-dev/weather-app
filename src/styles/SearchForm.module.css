@@ -1,8 +1,9 @@
 .search-form {
   display: flex;
-  flex-wrap: nowrap;
+  font-size: 1.25em;
 }
+
 .search-form__input {
-  margin-right: 1rem;
+  margin-right: 0.75em;
 }
 
