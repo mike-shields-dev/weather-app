@@ -1,7 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import directionLookup from "../data/directionLookup.json";
 import styles from "../styles/WindDirectionIcon.module.css";
+import {
+  unabbreviatedWindDirection,
+  degreesFromWindDirection,
+} from "../helpers/windDirection";
 
 const WindDirectionIcon = ({ direction }) => {
   return (
@@ -14,10 +17,10 @@ const WindDirectionIcon = ({ direction }) => {
       viewBox="0 0 490 490"
       fill="currentColor"
       style={{
-        transform: `rotate(${directionLookup[direction].degrees}deg)`,
+        transform: `rotate(${degreesFromWindDirection(direction)}deg)`,
       }}
     >
-      <title>{`arrow pointing ${directionLookup[direction].humanReadable}`}</title>
+      <title>{`arrow pointing ${unabbreviatedWindDirection(direction)}`}</title>
       <path d="M480.086,490L245,339.229L9.914,490L245,0L480.086,490z" />
     </svg>
   );

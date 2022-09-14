@@ -1,7 +1,29 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import WindDirectionIcon from "../../components/WindDirectionIcon";
-import directionLookup from "../../data/directionLookup.json";
+import {
+  degreesFromWindDirection,
+  unabbreviatedWindDirection,
+} from "../../helpers/windDirection";
+
+const windDirections = [
+  "n",
+  "nne",
+  "ne",
+  "ene",
+  "e",
+  "ese",
+  "se",
+  "sse",
+  "s",
+  "ssw",
+  "sw",
+  "wsw",
+  "w",
+  "wnw",
+  "nw",
+  "nnw",
+];
 
 describe("WindDirectionIcon", () => {
   it("matches snapshot", () => {
@@ -11,7 +33,7 @@ describe("WindDirectionIcon", () => {
   });
 
   it("renders an icon pointing in the provided direction", async () => {
-    Object.keys(directionLookup).forEach(async (direction) => {
+    windDirections.forEach(async (direction) => {
       render(<WindDirectionIcon direction={direction} />);
 
       const WindDirectionIconComponent = await screen.findByTestId(
@@ -19,23 +41,25 @@ describe("WindDirectionIcon", () => {
       );
 
       expect(WindDirectionIconComponent).toHaveStyle(
-        `transform: rotate(${directionLookup[direction].degrees}deg)`
+        `transform: rotate(${degreesFromWindDirection(direction)}deg)`
       );
     });
   });
 
-  it("renders an icon with an alt attribute describing the direction of the icon", () => {
-    Object.keys(directionLookup).forEach(async (direction) => {
+  it("renders an svg with a title describing the direction", () => {
+    windDirections.forEach(async (direction) => {
       render(<WindDirectionIcon direction={direction} />);
 
-      const description = new RegExp(directionLookup[direction.humanReadable]);
-
-      const WindDirectionIconComponent = await screen.findByAltText(
-        description,
+      const descriptionRegex = new RegExp(
+        unabbreviatedWindDirection(direction),
         "i"
       );
 
-      expect(WindDirectionIconComponent).toBeInTheDocument();
+      const windDirectionDescription = await screen.findByText(
+        descriptionRegex
+      );
+
+      expect(windDirectionDescription).toBeInTheDocument();
     });
   });
 });
