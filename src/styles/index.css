@@ -13,6 +13,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-size: 3vw;
 }
 
 body {
@@ -23,15 +24,11 @@ body {
   background-image: linear-gradient(to top, var(--dark) 0%, var(--mid) 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: var(--whitespace);
 }
 
 p {
   font-size: 1.125em;
-  margin: 0 auto 1em;
-}
-
-h2 {
-  margin-bottom: 0.5rem;
 }
 
 h1,
@@ -44,7 +41,7 @@ input[type="text"] {
   border: none;
   border-radius: 0.25rem;
   padding: 0.5rem;
-  font-size: 1.025em;
+  font-size: 1.25em;
   outline-color: var(--light);
   background: rgba(255, 255, 255, 0.8);
 }
