@@ -18,7 +18,7 @@
 
 body {
   letter-spacing: 0.075em;
-  height: 100vh;
+  min-height: 100vh;
   font-family: Urbanist;
   color: var(--white);
   background-image: linear-gradient(to top, var(--dark) 0%, var(--mid) 100%);
