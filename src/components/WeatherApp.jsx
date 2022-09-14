@@ -75,11 +75,12 @@ const WeatherApp = () => {
 
       {!errorMessage && !!forecasts.length && selectedForecast && (
         <>
+          <ForecastDetails {...selectedForecast} />
           <ForecastSummaries
             forecasts={forecasts}
             handleForecastSelect={handleForecastSelect}
+            selectedDate={selectedDate}
           />
-          <ForecastDetails {...selectedForecast} />
         </>
       )}
     </div>
