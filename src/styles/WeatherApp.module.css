@@ -1,6 +1,13 @@
 .weather-app {
-  margin: 1rem;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  background: rgb(215, 215, 238);
+  display: grid;
+  grid-template-rows: auto 10fr 3fr;
+  gap: 0.25rem;
+  margin: 0 auto;
+  min-height: calc(100vh - 2rem);
+  max-height: calc(100vh - 2rem);
+}
+
+.weather-app__header {
+  display: grid;
+  place-items: center;
 }

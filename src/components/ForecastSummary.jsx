@@ -12,10 +12,7 @@ const ForecastSummary = ({
   handleForecastSelect,
 }) => {
   return (
-    <div
-      className={`${styles["forecast-summary"]} shadow`}
-      data-testid="forecast-summary"
-    >
+    <div className={styles["forecast-summary"]} data-testid="forecast-summary">
       <h2
         className={styles["forecast-summary__date"]}
         data-testid="forecast-summary-date"
@@ -23,21 +20,23 @@ const ForecastSummary = ({
         <FormattedDate date={date} />
       </h2>
       <p
-        className="forecast-summary__description"
+        className={styles["forecast-summary__description"]}
         data-testid="forecast-summary-description"
       >
         {description}
       </p>
-      <WeatherIconComponent iconId={icon} />
+      <div className={styles["forecast-summary__weather-icon"]}>
+        <WeatherIconComponent iconId={icon} />
+      </div>
       <p
-        className="forecast-summary__temperature"
+        className={styles["forecast-summary__temperature"]}
         data-testid="forecast-summary-temperature"
       >
         <span>{temperature.max}</span>
         °C
       </p>
       <button
-        className="shadow"
+        className={styles["forecast-summary__button"]}
         type="button"
         onClick={() => handleForecastSelect(date)}
       >

@@ -1,20 +1,63 @@
 .forecast-summary {
   display: grid;
+  grid-template-areas:
+    "a h h h"
+    "b c d e";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
   place-items: center;
-  padding: 0.5rem 0.5rem 1rem;
-  margin-right: 1rem;
-  flex-grow: 1;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+  margin: 0.25rem 0;
   border-radius: 0.5rem;
-  background: rgba(0, 0, 0, 0);
-  box-shadow: 0.1rem 0.1rem 0.2rem 0 rgba(255, 255, 255, 0.25) inset,
-    0.25rem 0.25rem 0.45rem 0 rgba(0, 0, 0, 0.125),
-    -0.1rem -0.1rem 0.2rem 0 rgba(0, 0, 0, 0.05) inset;
-}
-
-.forecast-summary:last-of-type {
-  margin: 0;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .forecast-summary__date {
-  padding: 0.625rem 0;
+  grid-area: 1 / 1 / 1 / -1;
+  font-size: 1.25rem;
+}
+
+.forecast-summary__description {
+  grid-area: b;
+  align-self: flex-end;
+}
+
+@media only screen and (min-width: 500px) {
+  .forecast-summary__description {
+    grid-area: c;
+  }
+}
+
+.forecast-summary__weather-icon {
+  grid-area: 1 / 1 / -1 / 1;
+  padding-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 500px) {
+  .forecast-summary__weather-icon {
+    grid-area: b;
+    padding: 0 0 0.5rem;
+    font-size: 0.75rem;
+    align-self: flex-end;
+  }
+}
+
+.forecast-summary__temperature {
+  grid-area: 2 / 2 / -1 / 4;
+  align-self: flex-end;
+  text-align: center;
+}
+
+@media only screen and (min-width: 500px) {
+  .forecast-summary__temperature {
+    grid-area: d;
+
+  }
+}
+
+.forecast-summary__button {
+  grid-area: e;
+  font-size: 0.75rem;
+  align-self: flex-end;
 }

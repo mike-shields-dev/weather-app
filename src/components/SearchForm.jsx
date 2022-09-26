@@ -9,7 +9,7 @@ const SearchForm = ({
   placeholderText,
 }) => {
   return (
-    <div className="search-form" data-testid="search-form">
+    <div className={styles["search-form"]} data-testid="search-form">
       <input
         className={`${styles["search-form__input"]}`}
         data-testid="search-form-input"
